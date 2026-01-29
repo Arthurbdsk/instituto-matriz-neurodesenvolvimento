@@ -53,7 +53,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h3 className="font-bold text-primary mb-2">Telefone</h3>
-                  <p className="text-foreground">(11) XXXX-XXXX</p>
+                  <p className="text-foreground">(11) 98464-0809</p>
                   <p className="text-sm text-muted-foreground">
                     Segunda a sexta, 8h às 18h
                   </p>
