@@ -1,25 +1,34 @@
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
+import Header from "@/components/Header";
+import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
+import ServicesSection from "@/components/ServicesSection";
+import AudienceSection from "@/components/AudienceSection";
+import ContactSection from "@/components/ContactSection";
+import Footer from "@/components/Footer";
 
-/**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Best Practices, Design Guide and Common Pitfalls
- */
 export default function Home() {
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
+  const handleNavClick = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleCtaClick = () => {
+    handleNavClick("contact");
+  };
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
+    <div className="min-h-screen flex flex-col bg-white">
+      <Header onNavClick={handleNavClick} />
+      <main className="flex-1">
+        <HeroSection onCtaClick={handleCtaClick} />
+        <AboutSection />
+        <ServicesSection />
+        <AudienceSection />
+        <ContactSection />
       </main>
+      <Footer />
     </div>
   );
 }
