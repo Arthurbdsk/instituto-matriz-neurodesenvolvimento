@@ -46,7 +46,7 @@ export default function NoraChat() {
             className="w-12 h-12 rounded-full object-cover"
           />
           <div>
-            <h3 className="font-bold" style={{ color: "#ffffff" }}>
+            <h3 className="font-bold" style={{ color: '#262626' }}>
               NORA
             </h3>
             <p className="text-xs text-foreground/70">Assistente do Instituto Matriz</p>
