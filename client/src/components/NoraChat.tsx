@@ -12,40 +12,54 @@ interface Message {
 
 const FAQ_ITEMS = [
   {
-    keywords: ["horário", "funcionamento", "abre", "fecha", "horas"],
+    id: "horarios",
+    keywords: ["horário", "hora", "funciona", "abre", "fecha", "quando", "atende", "expediente"],
     answer:
       "O Instituto Matriz funciona de segunda a sexta das 8h às 19h e aos sábados das 8h às 12h. Agendamentos podem ser feitos através do site, email institutomatriz.adm@gmail.com ou pelo telefone (11) 98464-0809.",
   },
   {
-    keywords: ["serviços", "oferecemos", "atendimento", "oferece"],
+    id: "servicos",
+    keywords: ["serviço", "oferece", "atendimento", "terapia", "avaliação", "faz", "oferecemos"],
     answer:
       "Oferecemos avaliação neuropsicológica, psicologia clínica infantil, fonoaudiologia, psicopedagogia, terapia ocupacional e acompanhamento pedagógico.",
   },
   {
-    keywords: ["idade", "mínima", "crianças", "bebê", "quanto anos"],
+    id: "idade",
+    keywords: ["idade", "criança", "bebê", "adolescente", "adulto", "anos", "quanto"],
     answer:
       "Atendemos crianças a partir de 2 anos, adolescentes e adultos. Cada caso é avaliado individualmente para determinar a melhor abordagem.",
   },
   {
-    keywords: ["agendar", "consulta", "marcação", "agendamento"],
+    id: "agendar",
+    keywords: ["agendar", "marcar", "consulta", "agendamento", "marcação", "como agendar"],
     answer:
       "Você pode agendar através do botão 'Agendar Consulta' no site, enviar um email para institutomatriz.adm@gmail.com ou ligar para (11) 98464-0809. Responderemos em até 24 horas.",
   },
   {
-    keywords: ["convênio", "convênios", "plano", "saúde"],
+    id: "convenio",
+    keywords: ["convênio", "plano", "saúde", "aceita", "particular", "tabela"],
     answer:
       "Sim, trabalhamos com diversos convênios de saúde. Entre em contato para confirmar se o seu convênio é aceito.",
   },
   {
-    keywords: ["localização", "endereço", "onde", "fica", "local"],
+    id: "endereco",
+    keywords: ["localização", "endereço", "onde", "fica", "local", "morada", "rua"],
     answer:
       "Estamos localizados em Alameda Madeira, 222 - Conjunto 92, Barueri, Brazil 06454-010. Para informações sobre como chegar, entre em contato conosco pelo email institutomatriz.adm@gmail.com ou telefone (11) 98464-0809.",
   },
   {
-    keywords: ["contato", "telefone", "email", "whatsapp"],
+    id: "contato",
+    keywords: ["contato", "telefone", "email", "whatsapp", "ligar", "enviar mensagem"],
     answer:
       "Você pode nos contatar por: Telefone: (11) 98464-0809 | Email: institutomatriz.adm@gmail.com | Endereço: Alameda Madeira, 222 - Conjunto 92, Barueri, Brazil 06454-010",
   },
+];
+
+const QUICK_QUESTIONS = [
+  "Qual é o horário de funcionamento?",
+  "Quais serviços vocês oferecem?",
+  "Como agendar uma consulta?",
+  "Qual é o endereço?",
 ];
 
 export default function NoraChat() {
@@ -55,7 +69,7 @@ export default function NoraChat() {
       id: "1",
       type: "bot",
       content:
-        "Olá! Sou a Nora, mascote do Instituto Matriz! Como posso ajudá-lo hoje? Você pode fazer perguntas sobre nossos horários, serviços, agendamentos, endereço e muito mais!",
+        "Olá! Sou a Nora, mascote do Instituto Matriz! Como posso ajudá-lo hoje? Clique em uma das perguntas abaixo ou digite sua dúvida.",
       timestamp: new Date(),
     },
   ]);
@@ -73,24 +87,45 @@ export default function NoraChat() {
 
   const findRelevantAnswer = (userMessage: string): string | null => {
     const lowerMessage = userMessage.toLowerCase();
+    
+    // Remove acentos para melhor compatibilidade
+    const normalizedMessage = lowerMessage
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+
+    let bestMatch = null;
+    let bestMatchCount = 0;
 
     for (const faq of FAQ_ITEMS) {
-      const hasMatch = faq.keywords.some((keyword) => lowerMessage.includes(keyword));
-      if (hasMatch) {
-        return faq.answer;
+      let matchCount = 0;
+      
+      for (const keyword of faq.keywords) {
+        const normalizedKeyword = keyword
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "");
+        
+        if (normalizedMessage.includes(normalizedKeyword)) {
+          matchCount++;
+        }
+      }
+
+      if (matchCount > bestMatchCount) {
+        bestMatchCount = matchCount;
+        bestMatch = faq.answer;
       }
     }
 
-    return null;
+    return bestMatch;
   };
 
-  const handleSendMessage = async () => {
-    if (!input.trim()) return;
+  const handleSendMessage = async (messageText?: string) => {
+    const textToSend = messageText || input;
+    if (!textToSend.trim()) return;
 
     const userMessage: Message = {
       id: Date.now().toString(),
       type: "user",
-      content: input,
+      content: textToSend,
       timestamp: new Date(),
     };
 
@@ -99,7 +134,7 @@ export default function NoraChat() {
     setIsLoading(true);
 
     setTimeout(() => {
-      const faqAnswer = findRelevantAnswer(input);
+      const faqAnswer = findRelevantAnswer(textToSend);
 
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
@@ -113,6 +148,8 @@ export default function NoraChat() {
       setIsLoading(false);
     }, 500);
   };
+
+  const showQuickQuestions = messages.length === 1;
 
   return (
     <>
@@ -176,6 +213,22 @@ export default function NoraChat() {
                 </div>
               </div>
             ))}
+
+            {showQuickQuestions && (
+              <div className="space-y-2 mt-4">
+                <p className="text-xs text-foreground/60 font-semibold">Perguntas frequentes:</p>
+                {QUICK_QUESTIONS.map((question, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleSendMessage(question)}
+                    className="w-full text-left text-sm p-2 bg-primary/10 hover:bg-primary/20 rounded border border-primary/20 hover:border-primary/50 transition-all text-foreground"
+                  >
+                    {question}
+                  </button>
+                ))}
+              </div>
+            )}
+
             {isLoading && (
               <div className="flex justify-start">
                 <div className="bg-white text-foreground border border-border px-4 py-2 rounded-lg rounded-bl-none">
@@ -205,7 +258,7 @@ export default function NoraChat() {
                 className="flex-1"
               />
               <Button
-                onClick={handleSendMessage}
+                onClick={() => handleSendMessage()}
                 disabled={isLoading || !input.trim()}
                 size="icon"
                 className="bg-primary hover:bg-primary/90"
