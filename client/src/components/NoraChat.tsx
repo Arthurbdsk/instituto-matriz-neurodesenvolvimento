@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { MessageCircle, X } from "lucide-react";
 
 const FAQ_ITEMS = [
   {
@@ -34,65 +35,98 @@ const FAQ_ITEMS = [
 ];
 
 export default function NoraChat() {
+  const [isOpen, setIsOpen] = useState(false);
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   return (
-    <div className="fixed bottom-6 right-6 z-40">
-      <div className="bg-white rounded-lg shadow-2xl p-6 w-96 border-2 border-primary max-h-[600px] overflow-y-auto">
-        <div className="flex items-center gap-3 mb-6">
-          <img
-            src="/images/nora-mascote.png"
-            alt="Nora"
-            className="w-12 h-12 rounded-full object-cover"
-          />
-          <div>
-            <h3 className="font-bold" style={{ color: '#262626' }}>
-              NORA
-            </h3>
-            <p className="text-xs text-foreground/70">Assistente do Instituto Matriz</p>
+    <>
+      {!isOpen && (
+        <button
+          onClick={() => setIsOpen(true)}
+          className="fixed bottom-6 right-6 z-40 w-14 h-14 bg-white text-primary rounded-full shadow-lg hover:shadow-xl transition-all flex items-center justify-center hover:scale-110 border-2 border-primary"
+          aria-label="Abrir chat com Nora"
+        >
+          <MessageCircle className="w-6 h-6" />
+        </button>
+      )}
+
+      {isOpen && (
+        <div className="fixed bottom-6 right-6 z-40">
+          <div className="bg-white rounded-lg shadow-2xl p-6 w-96 border-2 border-primary max-h-[600px] overflow-y-auto">
+            <div className="flex items-center justify-between gap-3 mb-6">
+              <div className="flex items-center gap-3">
+                <img
+                  src="/images/nora-mascote.png"
+                  alt="Nora"
+                  className="w-12 h-12 rounded-full object-cover"
+                />
+                <div>
+                  <h3 className="font-bold" style={{ color: "#262626" }}>
+                    NORA
+                  </h3>
+                  <p className="text-xs text-foreground/70">
+                    Assistente do Instituto Matriz
+                  </p>
+                </div>
+              </div>
+              <button
+                onClick={() => setIsOpen(false)}
+                className="p-1 hover:bg-gray-100 rounded-full transition-colors"
+                aria-label="Fechar chat"
+              >
+                <X className="w-5 h-5 text-foreground" />
+              </button>
+            </div>
+
+            <p className="text-sm text-foreground mb-4 font-semibold">
+              Perguntas Frequentes:
+            </p>
+
+            <div className="space-y-2">
+              {FAQ_ITEMS.map((item, index) => (
+                <div
+                  key={index}
+                  className="border border-border rounded-lg overflow-hidden"
+                >
+                  <button
+                    onClick={() =>
+                      setExpandedIndex(expandedIndex === index ? null : index)
+                    }
+                    className="w-full text-left p-3 bg-primary/10 hover:bg-primary/20 transition-colors flex items-start justify-between gap-2"
+                  >
+                    <span className="text-sm font-medium text-foreground">
+                      {item.question}
+                    </span>
+                    <span className="text-primary flex-shrink-0 text-lg">
+                      {expandedIndex === index ? "−" : "+"}
+                    </span>
+                  </button>
+
+                  {expandedIndex === index && (
+                    <div className="p-3 bg-white border-t border-border">
+                      <p className="text-sm text-foreground/80">
+                        {item.answer}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-4 p-3 bg-primary/10 rounded-lg border border-primary/20">
+              <p className="text-xs text-foreground/70 font-semibold mb-2">
+                Contato Direto:
+              </p>
+              <p className="text-xs text-foreground/70">
+                <strong>Telefone:</strong> (11) 98464-0809
+              </p>
+              <p className="text-xs text-foreground/70 mt-1">
+                <strong>Email:</strong> institutomatriz.adm@gmail.com
+              </p>
+            </div>
           </div>
         </div>
-
-        <p className="text-sm text-foreground mb-4 font-semibold">
-          Perguntas Frequentes:
-        </p>
-
-        <div className="space-y-2">
-          {FAQ_ITEMS.map((item, index) => (
-            <div key={index} className="border border-border rounded-lg overflow-hidden">
-              <button
-                onClick={() =>
-                  setExpandedIndex(expandedIndex === index ? null : index)
-                }
-                className="w-full text-left p-3 bg-primary/10 hover:bg-primary/20 transition-colors flex items-start justify-between gap-2"
-              >
-                <span className="text-sm font-medium text-foreground">
-                  {item.question}
-                </span>
-                <span className="text-primary flex-shrink-0 text-lg">
-                  {expandedIndex === index ? "−" : "+"}
-                </span>
-              </button>
-
-              {expandedIndex === index && (
-                <div className="p-3 bg-white border-t border-border">
-                  <p className="text-sm text-foreground/80">{item.answer}</p>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-4 p-3 bg-primary/10 rounded-lg border border-primary/20">
-          <p className="text-xs text-foreground/70 font-semibold mb-2">Contato Direto:</p>
-          <p className="text-xs text-foreground/70">
-            <strong>Telefone:</strong> (11) 98464-0809
-          </p>
-          <p className="text-xs text-foreground/70 mt-1">
-            <strong>Email:</strong> institutomatriz.adm@gmail.com
-          </p>
-        </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 }
