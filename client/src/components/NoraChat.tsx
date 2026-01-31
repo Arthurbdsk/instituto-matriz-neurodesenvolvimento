@@ -13,34 +13,34 @@ interface Message {
 
 const FAQ_ITEMS = [
   {
-    question: "Qual é o horário de funcionamento?",
+    question: "horário funcionamento",
     answer:
-      "O Instituto Matriz funciona de segunda a sexta, das 8h às 18h. Agendamentos podem ser feitos através do site ou pelo telefone (11) 98464-0809.",
+      "O Instituto Matriz funciona de segunda a sexta, das 8h às 18h. Agendamentos podem ser feitos através do site, email institutomatriz.adm@gmail.com ou pelo telefone (11) 98464-0809.",
   },
   {
-    question: "Quais são os serviços oferecidos?",
+    question: "serviços oferecidos",
     answer:
       "Oferecemos avaliação neuropsicológica, psicologia clínica infantil, fonoaudiologia, psicopedagogia, terapia ocupacional e acompanhamento pedagógico.",
   },
   {
-    question: "Qual é a idade mínima para atendimento?",
+    question: "idade mínima atendimento",
     answer:
       "Atendemos crianças a partir de 2 anos, adolescentes e adultos. Cada caso é avaliado individualmente para determinar a melhor abordagem.",
   },
   {
-    question: "Como agendar uma consulta?",
+    question: "agendar consulta",
     answer:
-      "Você pode agendar através do botão 'Agendar Consulta' no site, enviar um email ou ligar para (11) 98464-0809. Responderemos em até 24 horas.",
+      "Você pode agendar através do botão 'Agendar Consulta' no site, enviar um email para institutomatriz.adm@gmail.com ou ligar para (11) 98464-0809. Responderemos em até 24 horas.",
   },
   {
-    question: "Vocês trabalham com convênios?",
+    question: "convênios",
     answer:
       "Sim, trabalhamos com diversos convênios de saúde. Entre em contato para confirmar se o seu convênio é aceito.",
   },
   {
-    question: "Qual é a localização do Instituto?",
+    question: "localização endereço",
     answer:
-      "Estamos localizados em São Paulo. Para informações precisas sobre o endereço e como chegar, entre em contato conosco.",
+      "Estamos localizados em São Paulo. Para informações precisas sobre o endereço e como chegar, entre em contato conosco pelo email institutomatriz.adm@gmail.com ou telefone (11) 98464-0809.",
   },
 ];
 
@@ -51,7 +51,7 @@ export default function NoraChat() {
       id: "1",
       type: "bot",
       content:
-        "Olá! Sou a Nora, mascote do Instituto Matriz! 🦉 Como posso ajudá-lo hoje? Você pode fazer perguntas sobre nossos horários, serviços, agendamentos e muito mais!",
+        "Olá! Sou a Nora, mascote do Instituto Matriz! Como posso ajudá-lo hoje? Você pode fazer perguntas sobre nossos horários, serviços, agendamentos e muito mais!",
       timestamp: new Date(),
     },
   ]);
@@ -79,7 +79,7 @@ export default function NoraChat() {
         messageWords.some((word) => word.includes(keyword) || keyword.includes(word))
       ).length;
 
-      if (matchCount >= 2) {
+      if (matchCount >= 1) {
         return faq.answer;
       }
     }
@@ -116,13 +116,13 @@ export default function NoraChat() {
         const response = await chatMutation.mutateAsync({
           message: input,
           context:
-            "Você é a Nora, mascote do Instituto Matriz de Neurodesenvolvimento. Responda de forma amigável e profissional sobre o Instituto.",
+            "Você é a Nora, mascote do Instituto Matriz de Neurodesenvolvimento. Responda de forma amigável e profissional sobre o Instituto. Não use asteriscos ou caracteres especiais nas respostas.",
         });
 
         const botMessage: Message = {
           id: (Date.now() + 1).toString(),
           type: "bot",
-          content: response.answer,
+          content: response.answer.replace(/\*\*/g, ""),
           timestamp: new Date(),
         };
         setMessages((prev) => [...prev, botMessage]);
