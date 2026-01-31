@@ -30,7 +30,7 @@ export default function Header({ onNavClick }: HeaderProps) {
           <img
             src="/images/logo-instituto-matriz.png"
             alt="Instituto Matriz"
-            className="h-12 md:h-14 w-auto"
+            className="h-16 md:h-20 w-auto"
           />
         </div>
 
