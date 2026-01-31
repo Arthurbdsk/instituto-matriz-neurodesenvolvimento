@@ -26,16 +26,12 @@ export default function Header({ onNavClick }: HeaderProps) {
     <header className="sticky top-0 z-50 bg-white border-b border-border shadow-sm">
       <div className="container flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
-        <div className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-lg">IM</span>
-          </div>
-          <div className="hidden sm:block">
-            <h1 className="text-sm md:text-base font-bold text-primary leading-tight">
-              Instituto Matriz
-            </h1>
-            <p className="text-xs text-muted-foreground">Neurodesenvolvimento</p>
-          </div>
+        <div className="flex items-center gap-3">
+          <img
+            src="/images/logo-instituto-matriz.png"
+            alt="Instituto Matriz"
+            className="h-12 md:h-14 w-auto"
+          />
         </div>
 
         {/* Desktop Navigation */}
