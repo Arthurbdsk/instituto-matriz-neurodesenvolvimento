@@ -78,21 +78,27 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3 mt-4">
                 <a
-                  href="#"
+                  href="https://www.facebook.com/CentroEducacionalMatriz/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-white transition-colors"
                   aria-label="Facebook"
                 >
                   <Facebook size={20} />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/institutomatriz_/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-white transition-colors"
                   aria-label="Instagram"
                 >
                   <Instagram size={20} />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/company/cematriz/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-white transition-colors"
                   aria-label="LinkedIn"
                 >
