@@ -107,6 +107,14 @@ export default function FounderSection() {
               Cada membro da equipe compartilha da missão do Instituto: oferecer atendimento de excelência, baseado em evidências científicas, com sensibilidade às necessidades individuais de cada criança, adolescente e adulto atendido.
             </p>
           </div>
+
+          <div className="mt-8 p-6 bg-primary/5 rounded-lg">
+            <h4 className="text-lg font-bold text-primary mb-3">Visite-nos</h4>
+            <p className="text-foreground/90 mb-2">Alameda Madeira, 222 - Conjunto 92, Barueri, Brazil 06454-010</p>
+            <p className="text-foreground/90 mb-2">Telefone: (11) 98464-0809</p>
+            <p className="text-foreground/90">Email: institutomatriz.adm@gmail.com</p>
+            <p className="text-sm text-foreground/70 mt-3">Segunda a sexta: 8h às 19h | Sábado: 8h às 12h</p>
+          </div>
         </div>
       </div>
     </section>

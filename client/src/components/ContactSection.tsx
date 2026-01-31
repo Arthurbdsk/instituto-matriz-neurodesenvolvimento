@@ -55,7 +55,7 @@ export default function ContactSection() {
                   <h3 className="font-bold text-primary mb-2">Telefone</h3>
                   <p className="text-foreground">(11) 98464-0809</p>
                   <p className="text-sm text-muted-foreground">
-                    Segunda a sexta, 8h às 18h
+                    Segunda a sexta: 8h às 19h | Sábado: 8h às 12h
                   </p>
                 </div>
               </div>
@@ -83,9 +83,10 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h3 className="font-bold text-primary mb-2">Localização</h3>
-                  <p className="text-foreground">São Paulo, SP</p>
+                  <p className="text-foreground">Alameda Madeira, 222 - Conjunto 92</p>
+                  <p className="text-foreground">Barueri, Brazil 06454-010</p>
                   <p className="text-sm text-muted-foreground">
-                    Agende sua visita conosco
+                    Visite-nos em nosso endereço
                   </p>
                 </div>
               </div>

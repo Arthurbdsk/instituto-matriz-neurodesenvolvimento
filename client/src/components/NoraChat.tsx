@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { MessageCircle, X, Send } from "lucide-react";
-import { trpc } from "@/lib/trpc";
 
 interface Message {
   id: string;
@@ -13,34 +12,39 @@ interface Message {
 
 const FAQ_ITEMS = [
   {
-    question: "horário funcionamento",
+    keywords: ["horário", "funcionamento", "abre", "fecha", "horas"],
     answer:
-      "O Instituto Matriz funciona de segunda a sexta, das 8h às 18h. Agendamentos podem ser feitos através do site, email institutomatriz.adm@gmail.com ou pelo telefone (11) 98464-0809.",
+      "O Instituto Matriz funciona de segunda a sexta das 8h às 19h e aos sábados das 8h às 12h. Agendamentos podem ser feitos através do site, email institutomatriz.adm@gmail.com ou pelo telefone (11) 98464-0809.",
   },
   {
-    question: "serviços oferecidos",
+    keywords: ["serviços", "oferecemos", "atendimento", "oferece"],
     answer:
       "Oferecemos avaliação neuropsicológica, psicologia clínica infantil, fonoaudiologia, psicopedagogia, terapia ocupacional e acompanhamento pedagógico.",
   },
   {
-    question: "idade mínima atendimento",
+    keywords: ["idade", "mínima", "crianças", "bebê", "quanto anos"],
     answer:
       "Atendemos crianças a partir de 2 anos, adolescentes e adultos. Cada caso é avaliado individualmente para determinar a melhor abordagem.",
   },
   {
-    question: "agendar consulta",
+    keywords: ["agendar", "consulta", "marcação", "agendamento"],
     answer:
       "Você pode agendar através do botão 'Agendar Consulta' no site, enviar um email para institutomatriz.adm@gmail.com ou ligar para (11) 98464-0809. Responderemos em até 24 horas.",
   },
   {
-    question: "convênios",
+    keywords: ["convênio", "convênios", "plano", "saúde"],
     answer:
       "Sim, trabalhamos com diversos convênios de saúde. Entre em contato para confirmar se o seu convênio é aceito.",
   },
   {
-    question: "localização endereço",
+    keywords: ["localização", "endereço", "onde", "fica", "local"],
     answer:
-      "Estamos localizados em São Paulo. Para informações precisas sobre o endereço e como chegar, entre em contato conosco pelo email institutomatriz.adm@gmail.com ou telefone (11) 98464-0809.",
+      "Estamos localizados em Alameda Madeira, 222 - Conjunto 92, Barueri, Brazil 06454-010. Para informações sobre como chegar, entre em contato conosco pelo email institutomatriz.adm@gmail.com ou telefone (11) 98464-0809.",
+  },
+  {
+    keywords: ["contato", "telefone", "email", "whatsapp"],
+    answer:
+      "Você pode nos contatar por: Telefone: (11) 98464-0809 | Email: institutomatriz.adm@gmail.com | Endereço: Alameda Madeira, 222 - Conjunto 92, Barueri, Brazil 06454-010",
   },
 ];
 
@@ -51,14 +55,13 @@ export default function NoraChat() {
       id: "1",
       type: "bot",
       content:
-        "Olá! Sou a Nora, mascote do Instituto Matriz! Como posso ajudá-lo hoje? Você pode fazer perguntas sobre nossos horários, serviços, agendamentos e muito mais!",
+        "Olá! Sou a Nora, mascote do Instituto Matriz! Como posso ajudá-lo hoje? Você pode fazer perguntas sobre nossos horários, serviços, agendamentos, endereço e muito mais!",
       timestamp: new Date(),
     },
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const chatMutation = trpc.chat.ask.useMutation();
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -72,14 +75,8 @@ export default function NoraChat() {
     const lowerMessage = userMessage.toLowerCase();
 
     for (const faq of FAQ_ITEMS) {
-      const questionKeywords = faq.question.toLowerCase().split(" ");
-      const messageWords = lowerMessage.split(" ");
-
-      const matchCount = questionKeywords.filter((keyword) =>
-        messageWords.some((word) => word.includes(keyword) || keyword.includes(word))
-      ).length;
-
-      if (matchCount >= 1) {
+      const hasMatch = faq.keywords.some((keyword) => lowerMessage.includes(keyword));
+      if (hasMatch) {
         return faq.answer;
       }
     }
@@ -101,44 +98,20 @@ export default function NoraChat() {
     setInput("");
     setIsLoading(true);
 
-    try {
+    setTimeout(() => {
       const faqAnswer = findRelevantAnswer(input);
 
-      if (faqAnswer) {
-        const botMessage: Message = {
-          id: (Date.now() + 1).toString(),
-          type: "bot",
-          content: faqAnswer,
-          timestamp: new Date(),
-        };
-        setMessages((prev) => [...prev, botMessage]);
-      } else {
-        const response = await chatMutation.mutateAsync({
-          message: input,
-          context:
-            "Você é a Nora, mascote do Instituto Matriz de Neurodesenvolvimento. Responda de forma amigável e profissional sobre o Instituto. Não use asteriscos ou caracteres especiais nas respostas.",
-        });
-
-        const botMessage: Message = {
-          id: (Date.now() + 1).toString(),
-          type: "bot",
-          content: response.answer.replace(/\*\*/g, ""),
-          timestamp: new Date(),
-        };
-        setMessages((prev) => [...prev, botMessage]);
-      }
-    } catch (error) {
-      const errorMessage: Message = {
+      const botMessage: Message = {
         id: (Date.now() + 1).toString(),
         type: "bot",
         content:
-          "Desculpe, tive um problema ao processar sua pergunta. Por favor, tente novamente ou entre em contato conosco pelo telefone (11) 98464-0809.",
+          faqAnswer ||
+          "Desculpe, não consegui encontrar uma resposta para sua pergunta. Por favor, entre em contato conosco pelo telefone (11) 98464-0809 ou email institutomatriz.adm@gmail.com.",
         timestamp: new Date(),
       };
-      setMessages((prev) => [...prev, errorMessage]);
-    } finally {
+      setMessages((prev) => [...prev, botMessage]);
       setIsLoading(false);
-    }
+    }, 500);
   };
 
   return (
