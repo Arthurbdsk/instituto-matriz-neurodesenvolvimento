@@ -156,7 +156,7 @@ export default function NoraChat() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-40 w-14 h-14 bg-primary text-white rounded-full shadow-lg hover:shadow-xl transition-all flex items-center justify-center hover:scale-110"
+          className="fixed bottom-6 right-6 z-40 w-14 h-14 bg-white text-black rounded-full shadow-lg hover:shadow-xl transition-all flex items-center justify-center hover:scale-110 border-2 border-primary"
           aria-label="Abrir chat com Nora"
         >
           <MessageCircle className="w-6 h-6" />
