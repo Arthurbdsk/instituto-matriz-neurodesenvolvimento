@@ -93,7 +93,7 @@ export default function ContactSection() {
             </Card>
 
             <Button
-              onClick={() => window.open("https://wa.me/", "_blank")}
+              onClick={() => window.open("https://wa.me/5511984640809", "_blank")}
               className="w-full bg-green-600 hover:bg-green-700 text-white flex items-center justify-center gap-2"
               size="lg"
             >
