@@ -1,3 +1,4 @@
+import { useAuth } from "@/_core/hooks/useAuth";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
@@ -7,6 +8,10 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
 export default function Home() {
+  // The userAuth hooks provides authentication state
+  // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
+  let { user, loading, error, isAuthenticated, logout } = useAuth();
+
   const handleNavClick = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
