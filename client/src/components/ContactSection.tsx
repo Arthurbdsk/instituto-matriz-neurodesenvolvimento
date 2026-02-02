@@ -68,7 +68,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h3 className="font-bold text-primary mb-2">E-mail</h3>
-                  <p className="text-foreground">institutomatriz.adm@gmail.com</p>
+                  <p className="text-foreground">contato@institutomatriz.com.br</p>
                   <p className="text-sm text-muted-foreground">
                     Responderemos em até 24 horas
                   </p>

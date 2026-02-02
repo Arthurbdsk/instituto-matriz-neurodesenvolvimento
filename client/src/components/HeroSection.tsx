@@ -27,7 +27,7 @@ export default function HeroSection({ onCtaClick }: HeroSectionProps) {
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button
-                onClick={onCtaClick}
+                onClick={() => window.open("https://wa.me/5511984640809", "_blank")}
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-white flex items-center gap-2"
               >
@@ -49,9 +49,9 @@ export default function HeroSection({ onCtaClick }: HeroSectionProps) {
           <div className="hidden md:flex justify-center items-center">
             <div className="relative w-full max-w-md h-96 rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="/images/hero-brain.jpg"
-                alt="Cérebro - Neurociência"
-                className="w-full h-full object-cover"
+                src="/images/logo-matriz.png"
+                alt="Logo Instituto Matriz"
+                className="w-full h-full object-contain"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
             </div>
