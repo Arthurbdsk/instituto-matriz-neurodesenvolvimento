@@ -58,7 +58,7 @@ export default function AboutSection() {
             return (
               <Card
                 key={index}
-                className="p-6 hover:shadow-lg transition-shadow duration-300 border-border"
+                className="p-6 hover:shadow-lg transition-shadow duration-300 border-border" style={{borderColor: '#9e9e9e'}}
               >
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-primary/10 rounded-lg">
