@@ -26,7 +26,7 @@ const services = [
       "Arteterapia",
       "Musicoterapia",
       "Terapia Assistida por Equinos",
-      "Psicopedagogia",
+      "Neuropedagogia",
     ],
   },
   {
