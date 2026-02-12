@@ -37,9 +37,20 @@ export default function FounderSection() {
 
         {/* Founder Section */}
         <div className="bg-white rounded-lg shadow-lg p-8 md:p-12 mb-12">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            {/* Left: Text */}
-            <div>
+          <div className="grid md:grid-cols-2 gap-8 items-start">
+            {/* Left: Image */}
+            <div className="flex justify-center md:order-2">
+              <div className="relative w-full max-w-sm rounded-lg overflow-hidden shadow-lg">
+                <img
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316556941/ZaohHZBAtHTvhaja.jpg"
+                  alt="Michelle Bedeschi"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Right: Text */}
+            <div className="md:order-1">
               <h3 className="text-2xl md:text-3xl font-bold text-primary mb-4">
                 Michelle Bedeschi
               </h3>
@@ -51,25 +62,25 @@ export default function FounderSection() {
               </p>
               <div className="bg-secondary/10 border-l-4 border-secondary p-4 rounded">
                 <p className="text-foreground font-semibold">
-                  “Cada pessoa é única. Nosso compromisso é compreender sua história e potencializar seu desenvolvimento de forma completa e integrada.”
+                  "Cada pessoa é única. Nosso compromisso é compreender sua história e potencializar seu desenvolvimento de forma completa e integrada."
                 </p>
               </div>
             </div>
+          </div>
 
-            {/* Right: Specializations */}
-            <div>
-              <h4 className="text-xl font-bold text-primary mb-6">Especializações</h4>
-              <div className="space-y-4">
-                {specializations.map((spec, index) => (
-                  <div
-                    key={index}
-                    className="bg-white border-2 border-secondary/20 rounded-lg p-4 hover:border-secondary/50 transition-colors"
-                  >
-                    <h5 className="font-bold text-primary mb-1">{spec.title}</h5>
-                    <p className="text-sm text-foreground/70">{spec.description}</p>
-                  </div>
-                ))}
-              </div>
+          {/* Specializations - Below the main content */}
+          <div className="mt-12 pt-8 border-t border-secondary/20">
+            <h4 className="text-xl font-bold text-primary mb-6">Especializações</h4>
+            <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
+              {specializations.map((spec, index) => (
+                <div
+                  key={index}
+                  className="bg-gradient-to-br from-primary/5 to-secondary/5 border-2 border-secondary/20 rounded-lg p-4 hover:border-secondary/50 transition-colors"
+                >
+                  <h5 className="font-bold text-primary mb-2 text-sm">{spec.title}</h5>
+                  <p className="text-xs text-foreground/70">{spec.description}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
