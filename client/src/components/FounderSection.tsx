@@ -31,7 +31,7 @@ export default function FounderSection() {
             O Diferencial do Instituto Matriz
           </h2>
           <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-            Excelência científica, rigor técnico e humanidade integrados em cada atendimento
+            Neurociência, excelência científica e cuidado humano em cada atendimento, para crianças e adultos.
           </p>
         </div>
 
@@ -44,14 +44,14 @@ export default function FounderSection() {
                 Michelle Bedeschi
               </h3>
               <p className="text-foreground/90 mb-4 leading-relaxed">
-                Fundadora do Instituto Matriz, Michelle Bedeschi é uma profissional de excelência com formação em múltiplas disciplinas que convergem para o desenvolvimento neurológico saudável.
+                Fundadora do Instituto Matriz de Neurodesenvolvimento, Michelle Bedeschi é uma profissional de excelência com formação em múltiplas disciplinas que convergem para o desenvolvimento neurológico saudável.
               </p>
               <p className="text-foreground/90 mb-6 leading-relaxed">
-                Neurocientista e neuropedagoga, Michelle combina rigor científico com uma abordagem humanizada. Sua expertise garante que todos os programas, intervenções e avaliações sejam planejados com precisão, individualização e acompanhamento contínuo.
+                Como neurocientista e neuropedagoga, ela alia rigor científico à abordagem humana e acolhedora, garantindo que cada avaliação, intervenção e programa seja planejado de forma individualizada, acompanhada de perto e voltada para resultados reais na vida das pessoas e famílias.
               </p>
               <div className="bg-secondary/10 border-l-4 border-secondary p-4 rounded">
                 <p className="text-foreground font-semibold">
-                  "Cada criança é única. Nosso compromisso é entender sua história neurológica e potencializar seu desenvolvimento de forma integral."
+                  “Cada pessoa é única. Nosso compromisso é compreender sua história e potencializar seu desenvolvimento de forma completa e integrada.”
                 </p>
               </div>
             </div>

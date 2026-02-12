@@ -17,12 +17,14 @@ export default function HeroSection({ onCtaClick }: HeroSectionProps) {
                 Instituto Matriz de Neurodesenvolvimento
               </h1>
               <p className="text-xl text-muted-foreground font-medium">
-                Ciência, desenvolvimento e humanidade integrados.
+                Ciência, neurodesenvolvimento e humanidade integrados.
               </p>
             </div>
 
             <p className="text-lg text-foreground leading-relaxed max-w-lg">
-              Mais de 20 anos de experiência em saúde, educação e desenvolvimento humano. Acompanhamos mais de 1.000 famílias com uma abordagem interdisciplinar baseada em evidências científicas.
+              Há mais de 20 anos atuando nas áreas de saúde, educação e neurodesenvolvimento humano, o Instituto Matriz oferece acompanhamento interdisciplinar especializado em Transtornos do Neurodesenvolvimento.
+
+Já acompanhamos mais de 1.000 famílias com uma abordagem baseada em evidências científicas, aliando rigor técnico, escuta qualificada e planejamento individualizado.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
