@@ -128,19 +128,19 @@ export default function FounderSection() {
             <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg p-6">
               <div className="text-3xl font-bold text-primary mb-2">Renomadas</div>
               <p className="text-foreground/80">
-                Formação nas mais prestigiadas universidades da América Latina
+                Formação nas mais prestigiadas universidades da América Latina.
               </p>
             </div>
             <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg p-6">
               <div className="text-3xl font-bold text-primary mb-2">Especialistas</div>
               <p className="text-foreground/80">
-                Profissionais com expertise em suas respectivas áreas de atuação
+                Profissionais com expertise em suas respectivas áreas de atuação.
               </p>
             </div>
             <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg p-6">
               <div className="text-3xl font-bold text-primary mb-2">Dedicados</div>
               <p className="text-foreground/80">
-                Comprometidos com o desenvolvimento integral de cada paciente
+                Comprometidos com o desenvolvimento integral de cada paciente.
               </p>
             </div>
           </div>
@@ -155,8 +155,8 @@ export default function FounderSection() {
             <h4 className="text-lg font-bold text-primary mb-3">Visite-nos</h4>
             <p className="text-foreground/90 mb-2">Alameda Madeira, 222 - Conjunto 92, Barueri, Brazil 06454-010</p>
             <p className="text-foreground/90 mb-2">Telefone: (11) 98464-0809</p>
-            <p className="text-foreground/90">Email: institutomatriz.adm@gmail.com</p>
-            <p className="text-sm text-foreground/70 mt-3">Segunda a sexta: 8h às 19h | Sábado: 8h às 12h</p>
+            <p className="text-foreground/90">Email: contato@institutomatriz.com.br</p>
+            <p className="text-sm text-foreground/70 mt-3">Segunda à sexta: 8h às 19h | Sábado: 8h às 13h</p>
           </div>
         </div>
       </div>

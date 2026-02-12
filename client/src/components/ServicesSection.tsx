@@ -12,7 +12,7 @@ const services = [
       "Terapia Cognitivo-Comportamental (TCC)",
       "ABA",
       "Reabilitação Cognitiva",
-      "Neuromodulação",
+      "Neuromodulação - REAC",
     ],
   },
   {
@@ -21,12 +21,12 @@ const services = [
     items: [
       "Fonoaudiologia",
       "Terapia Ocupacional",
-      "Fisioterapia",
+      "Fisioterapia Neurofuncional e Ortopédica",
       "Psicomotricidade",
       "Arteterapia",
       "Musicoterapia",
-      "Ecoterapia",
-      "Hidroterapia",
+      "Terapia Assistida por Equinos",
+      "Psicopedagogia",
     ],
   },
   {
