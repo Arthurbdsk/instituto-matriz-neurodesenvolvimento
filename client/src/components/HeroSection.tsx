@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
 
 interface HeroSectionProps {
   onCtaClick: () => void;
@@ -31,10 +31,10 @@ Já acompanhamos mais de 1.000 famílias com uma abordagem baseada em evidência
               <Button
                 onClick={() => window.open("https://wa.me/5511984640809", "_blank")}
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-white flex items-center gap-2"
+                className="bg-green-500 hover:bg-green-600 text-white flex items-center gap-2"
               >
+                <MessageCircle size={20} />
                 Converse no WhatsApp
-                <ArrowRight size={20} />
               </Button>
               <Button
                 onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}

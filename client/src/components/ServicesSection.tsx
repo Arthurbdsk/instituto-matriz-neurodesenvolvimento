@@ -6,9 +6,9 @@ const services = [
     icon: Brain,
     title: "Saúde Mental e Neurodesenvolvimento",
     items: [
-      "Psicologia",
-      "Psiquiatria",
       "Neuropsicologia",
+      "Psiquiatria",
+      "Psicologia",
       "Terapia Cognitivo-Comportamental (TCC)",
       "ABA",
       "Reabilitação Cognitiva",

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, MessageCircle } from "lucide-react";
 import { useState } from "react";
 
 interface HeaderProps {
@@ -50,10 +50,11 @@ export default function Header({ onNavClick }: HeaderProps) {
         {/* CTA Button */}
         <div className="flex items-center gap-2">
           <Button
-            onClick={() => handleNavClick("contact")}
-            className="hidden sm:inline-flex bg-primary hover:bg-primary/90 text-white"
+            onClick={() => window.open('https://wa.me/5511984640809', '_blank')}
+            className="hidden sm:inline-flex bg-green-500 hover:bg-green-600 text-white gap-2"
           >
-            Agendar Consulta
+            <MessageCircle size={18} />
+            WhatsApp
           </Button>
 
           {/* Mobile Menu Button */}
@@ -81,10 +82,11 @@ export default function Header({ onNavClick }: HeaderProps) {
               </button>
             ))}
             <Button
-              onClick={() => handleNavClick("contact")}
-              className="w-full bg-primary hover:bg-primary/90 text-white mt-2"
+              onClick={() => window.open('https://wa.me/5511984640809', '_blank')}
+              className="w-full bg-green-500 hover:bg-green-600 text-white mt-2 gap-2"
             >
-              Agendar Consulta
+              <MessageCircle size={18} />
+              Converse no WhatsApp
             </Button>
           </div>
         </nav>

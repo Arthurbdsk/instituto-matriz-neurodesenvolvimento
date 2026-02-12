@@ -37,19 +37,19 @@ export default function FounderSection() {
 
         {/* Founder Section */}
         <div className="bg-white rounded-lg shadow-lg p-8 md:p-12 mb-12">
-          {/* Mobile Layout - Image with name on top */}
+          {/* Mobile Layout - Image with name below */}
           <div className="md:hidden mb-8">
-            <div className="relative w-full max-w-sm mx-auto rounded-lg overflow-hidden shadow-lg">
-              <img
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316556941/RckQuGRTgLfCkIgm.jpg"
-                alt="Michelle Bedeschi"
-                className="w-full h-auto object-cover"
-              />
-              <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-black/40 to-transparent p-4">
-                <h3 className="text-2xl font-bold text-white">
-                  Michelle Bedeschi
-                </h3>
+            <div className="relative w-full max-w-sm mx-auto">
+              <div className="rounded-lg overflow-hidden shadow-lg">
+                <img
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316556941/RckQuGRTgLfCkIgm.jpg"
+                  alt="Michelle Bedeschi"
+                  className="w-full h-auto object-cover"
+                />
               </div>
+              <h3 className="text-2xl font-bold text-secondary mt-4 text-center">
+                Michelle Bedeschi
+              </h3>
             </div>
           </div>
 
