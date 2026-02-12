@@ -5,20 +5,20 @@ export default function FounderSection() {
       description: "Membro da Sociedade Brasileira de Neurociências e Comportamento - SBNeC. Colaboradora da Sociedade Brasileira de Neuropsicopedagogia - SBNPp.",
     },
     {
-      title: "Neuropedagoga",
-      description: "Integra neurociência com práticas educacionais",
+      title: "Consultoria",
+      description: "Palestrante, Consultora Educacional e Atuação em Orientação Parental em Saúde Mental e Neurodesenvolvimento.",
     },
     {
-      title: "Pedagogia (USP)",
-      description: "Formação em Pedagogia pela Universidade de São Paulo",
+      title: "Licenciatura",
+      description: "Graduação em Pedagogia pela Faculdade de Educação da Universidade de São Paulo - FEUSP.",
     },
     {
       title: "Neurociência",
-      description: "Especialista pela Faculdade de Ciências Médicas da Santa Casa de São Paulo",
+      description: "Especialista em Transtornos de Neurodesenvolvimento pela Faculdade de Ciências Médicas da Santa Casa de São Paulo - FCMSCSP.",
     },
     {
       title: "Saúde Mental",
-      description: "Especialista em Psiquiatria e Saúde Mental da Infância e Adolescência pelo Child Behavior Institute of Miami",
+      description: "Especialista em Psiquiatria e Saúde Mental da Infância e Adolescência pelo Child Behavior Institute of Miami.",
     },
   ];
 
