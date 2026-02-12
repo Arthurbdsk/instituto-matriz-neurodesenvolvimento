@@ -42,7 +42,7 @@ export default function FounderSection() {
             <div className="flex justify-center md:order-2">
               <div className="relative w-full max-w-sm rounded-lg overflow-hidden shadow-lg">
                 <img
-                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316556941/ZaohHZBAtHTvhaja.jpg"
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316556941/RckQuGRTgLfCkIgm.jpg"
                   alt="Michelle Bedeschi"
                   className="w-full h-auto object-cover"
                 />
