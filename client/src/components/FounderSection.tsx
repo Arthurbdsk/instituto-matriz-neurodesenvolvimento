@@ -37,7 +37,24 @@ export default function FounderSection() {
 
         {/* Founder Section */}
         <div className="bg-white rounded-lg shadow-lg p-8 md:p-12 mb-12">
-          <div className="grid md:grid-cols-2 gap-8 items-start">
+          {/* Mobile Layout - Image with name on top */}
+          <div className="md:hidden mb-8">
+            <div className="relative w-full max-w-sm mx-auto rounded-lg overflow-hidden shadow-lg">
+              <img
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316556941/RckQuGRTgLfCkIgm.jpg"
+                alt="Michelle Bedeschi"
+                className="w-full h-auto object-cover"
+              />
+              <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-black/40 to-transparent p-4">
+                <h3 className="text-2xl font-bold text-white">
+                  Michelle Bedeschi
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop Layout */}
+          <div className="hidden md:grid md:grid-cols-2 gap-8 items-start">
             {/* Left: Image */}
             <div className="flex justify-center md:order-2">
               <div className="relative w-full max-w-sm rounded-lg overflow-hidden shadow-lg">
@@ -65,6 +82,21 @@ export default function FounderSection() {
                   "Cada pessoa é única. Nosso compromisso é compreender sua história e potencializar seu desenvolvimento de forma completa e integrada."
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* Mobile Text Content */}
+          <div className="md:hidden">
+            <p className="text-foreground/90 mb-4 leading-relaxed">
+              Fundadora e Diretora do Instituto Matriz de Neurodesenvolvimento, Michelle Bedeschi é uma profissional de excelência com formação em múltiplas disciplinas que convergem para o desenvolvimento neurológico saudável.
+            </p>
+            <p className="text-foreground/90 mb-6 leading-relaxed">
+              Como neurocientista e neuropedagoga, ela alia rigor científico à abordagem humana e acolhedora, garantindo que cada avaliação, intervenção e programa seja planejado de forma individualizada, acompanhada de perto e voltada para resultados reais na vida das pessoas e famílias.
+            </p>
+            <div className="bg-secondary/10 border-l-4 border-secondary p-4 rounded">
+              <p className="text-foreground font-semibold">
+                "Cada pessoa é única. Nosso compromisso é compreender sua história e potencializar seu desenvolvimento de forma completa e integrada."
+              </p>
             </div>
           </div>
 

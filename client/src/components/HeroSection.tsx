@@ -33,7 +33,7 @@ Já acompanhamos mais de 1.000 famílias com uma abordagem baseada em evidência
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-white flex items-center gap-2"
               >
-                Agendar Consulta
+                Converse no WhatsApp
                 <ArrowRight size={20} />
               </Button>
               <Button
