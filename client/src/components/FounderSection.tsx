@@ -1,8 +1,8 @@
 export default function FounderSection() {
   const specializations = [
     {
-      title: "Neurocientista",
-      description: "Especialista em funcionamento do cérebro e desenvolvimento neurológico",
+      title: "Conquistas",
+      description: "Membro da Sociedade Brasileira de Neurociências e Comportamento - SBNeC. Colaboradora da Sociedade Brasileira de Neuropsicopedagogia - SBNPp.",
     },
     {
       title: "Neuropedagoga",
@@ -17,7 +17,7 @@ export default function FounderSection() {
       description: "Especialista pela Faculdade de Ciências Médicas da Santa Casa de São Paulo",
     },
     {
-      title: "Psiquiatria Infantil",
+      title: "Saúde Mental",
       description: "Especialista em Psiquiatria e Saúde Mental da Infância e Adolescência pelo Child Behavior Institute of Miami",
     },
   ];
@@ -44,7 +44,7 @@ export default function FounderSection() {
                 Michelle Bedeschi
               </h3>
               <p className="text-foreground/90 mb-4 leading-relaxed">
-                Fundadora do Instituto Matriz de Neurodesenvolvimento, Michelle Bedeschi é uma profissional de excelência com formação em múltiplas disciplinas que convergem para o desenvolvimento neurológico saudável.
+                Fundadora e Diretora do Instituto Matriz de Neurodesenvolvimento, Michelle Bedeschi é uma profissional de excelência com formação em múltiplas disciplinas que convergem para o desenvolvimento neurológico saudável.
               </p>
               <p className="text-foreground/90 mb-6 leading-relaxed">
                 Como neurocientista e neuropedagoga, ela alia rigor científico à abordagem humana e acolhedora, garantindo que cada avaliação, intervenção e programa seja planejado de forma individualizada, acompanhada de perto e voltada para resultados reais na vida das pessoas e famílias.
