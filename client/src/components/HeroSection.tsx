@@ -7,20 +7,9 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onCtaClick }: HeroSectionProps) {
   return (
-    <section id="home" className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-green-50 py-12 md:py-20">
+    <section id="home" className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-green-50 py-20 md:py-32">
       <div className="container">
-        {/* Logo no topo, centralizado em mobile, canto superior direito em desktop */}
-        <div className="flex justify-center md:justify-end mb-8 md:mb-12">
-          <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-xl overflow-hidden shadow-lg">
-            <img
-              src="/images/logo-matriz.png"
-              alt="Logo Instituto Matriz"
-              className="w-full h-full object-contain"
-            />
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="flex flex-col gap-6 animate-fade-in">
             <div className="space-y-4">
@@ -56,8 +45,17 @@ export default function HeroSection({ onCtaClick }: HeroSectionProps) {
             </div>
           </div>
 
-          {/* Right Space - Empty on desktop for balance */}
-          <div className="hidden md:block"></div>
+          {/* Right Image */}
+          <div className="hidden md:flex justify-center items-center">
+            <div className="relative w-full max-w-md h-96 rounded-2xl overflow-hidden shadow-2xl">
+              <img
+                src="/images/logo-matriz.png"
+                alt="Logo Instituto Matriz"
+                className="w-full h-full object-contain"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
+            </div>
+          </div>
         </div>
       </div>
 
