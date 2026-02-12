@@ -9,7 +9,7 @@ export default function HeroSection({ onCtaClick }: HeroSectionProps) {
   return (
     <section id="home" className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-green-50 py-20 md:py-32">
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
           {/* Left Content */}
           <div className="flex flex-col gap-6 animate-fade-in">
             <div className="space-y-4">
