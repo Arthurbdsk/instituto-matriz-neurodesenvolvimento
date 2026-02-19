@@ -25,7 +25,7 @@ const FAQ_ITEMS = [
   {
     question: "Atendemos qual faixa etária?",
     answer:
-      "Atendemos crianças a partir de 2 anos, adolescentes e adultos. Cada caso é avaliado individualmente para determinar a melhor abordagem.",
+      "Atendemos crianças, adolescentes e adultos. Cada caso é avaliado individualmente para determinar a melhor abordagem.",
   },
   {
     question: "Como funcionam os atendimentos e a política de pagamentos?",
@@ -126,9 +126,6 @@ export default function NoraChat() {
             {/* Footer */}
             <div className="sticky bottom-0 bg-white border-t border-border p-4 sm:p-6">
               <div className="p-3 bg-primary/10 rounded-lg border border-primary/20">
-                <p className="text-xs text-foreground/70 font-semibold mb-2">
-                  Contato Direto:
-                </p>
                 <p className="text-xs text-foreground/70">
                   <strong>Telefone:</strong> (11) 98464-0809
                 </p>
