@@ -28,9 +28,9 @@ const FAQ_ITEMS = [
       "Atendemos crianças a partir de 2 anos, adolescentes e adultos. Cada caso é avaliado individualmente para determinar a melhor abordagem.",
   },
   {
-    question: "Vocês trabalham com convênios?",
+    question: "Como funcionam os atendimentos e a política de pagamentos?",
     answer:
-      "Sim, trabalhamos com diversos convênios de saúde. Entre em contato através do WhatsApp (11) 98464-0809 para confirmar se o seu convênio é aceito.",
+      "Trabalhamos no formato particular, com modelo de reembolso, mediante emissão de nota fiscal para solicitação junto ao plano de saúde, e também via liminar judicial, quando aplicável.",
   },
 ];
 
