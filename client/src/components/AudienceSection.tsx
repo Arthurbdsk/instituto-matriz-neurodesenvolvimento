@@ -19,11 +19,11 @@ const audiences = [
 const conditions = [
   {
     category: "Transtornos do Neurodesenvolvimento",
-    items: ["TEA", "TDAH", "TOD", "TAG", "Déficit Intelectual"],
+    items: ["TEA", "TDAH", "TOD", "E demais comprometimentos Neurológicos"],
   },
   {
     category: "Transtornos de Aprendizagem",
-    items: ["DPAC", "Dislexia", "Discalculia"],
+    items: ["DPAC", "Dislexia", "Discalculia", "Disgrafia", "Disortografia"],
   },
   {
     category: "Transtornos de Saúde Mental",
@@ -31,7 +31,7 @@ const conditions = [
   },
   {
     category: "Condições Específicas",
-    items: ["Síndromes Genéticas Raras"],
+    items: ["Síndrome de Down", "Síndrome Xia-Gibbs", "Síndromes Genéticas Raras"],
   },
 ];
 
