@@ -7,12 +7,12 @@ const services = [
     title: "Saúde Mental e Neurodesenvolvimento",
     items: [
       "Neuropsicologia",
-      "Psiquiatria",
       "Psicologia",
+      "Análise do Comportamento Aplicada (ABA)",
+      "Modelo Denver de Intervenção Precoce (ESDM – Early Start Denver Model)",
       "Terapia Cognitivo-Comportamental (TCC)",
-      "ABA",
       "Reabilitação Cognitiva",
-      "Neuromodulação - REAC",
+      "Neuromodulação Não-Invasiva",
     ],
   },
   {
@@ -20,13 +20,13 @@ const services = [
     title: "Terapias Integrativas",
     items: [
       "Fonoaudiologia",
-      "Terapia Ocupacional",
+      "Terapia Ocupacional (Integração Sensorial de Ayres®)",
       "Fisioterapia Neurofuncional e Ortopédica",
       "Psicomotricidade",
       "Arteterapia",
       "Musicoterapia",
       "Terapia Assistida por Equinos",
-      "Neuropedagogia",
+      "Psicopedagogia",
     ],
   },
   {
