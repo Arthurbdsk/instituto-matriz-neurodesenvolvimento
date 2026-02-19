@@ -47,7 +47,7 @@ export default function AboutSection() {
             O Instituto Matriz de Neurodesenvolvimento é um centro especializado em saúde, educação e desenvolvimento humano, com atuação interdisciplinar e baseada em evidências científicas.
           </p>
           <p className="text-base text-muted-foreground leading-relaxed">
-            Com mais de <strong>20 anos de experiência</strong>, o Instituto é a consolidação de uma prática madura, ética e responsável, tendo acompanhado mais de <strong>1.000 famílias</strong>, inclusive em projetos internacionais.
+            Com mais de <strong>20 anos de experiência</strong>, o Instituto Matriz é a consolidação de uma prática madura, ética e responsável, tendo acompanhado mais de <strong>1.000 famílias</strong>, inclusive em projetos internacionais.
           </p>
         </div>
 

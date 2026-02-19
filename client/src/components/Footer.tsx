@@ -11,12 +11,12 @@ export default function Footer() {
           <div>
             <h3 className="font-bold text-lg mb-4 flex items-center gap-2">
               <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-                <span className="text-primary font-bold text-sm">IM</span>
+                <span className="text-primary font-bold text-sm">IMN</span>
               </div>
               Instituto Matriz
             </h3>
             <p className="text-blue-100 text-sm leading-relaxed">
-              Neurodesenvolvimento, saúde mental e educação integrados com ciência e humanidade.
+              Centro de referência em terapias multidisciplinares, promovendo uma melhor qualidade de vida para TEA, TDAH, Sindrome de Down e tantos outros Transtornos de Desenvolvimento.
             </p>
           </div>
 
@@ -56,10 +56,10 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-4">Serviços</h4>
             <ul className="space-y-2 text-sm text-blue-100">
-              <li>Psicologia e Psiquiatria</li>
+              <li>Neuropsicologia e Psicologia</li>
               <li>Fonoaudiologia</li>
-              <li>Terapia Ocupacional</li>
-              <li>Avaliações Especializadas</li>
+              <li>Terapia Ocupacional e Fisioterapia</li>
+              <li>Terapia Integrada</li>
               <li>Educação e Aprendizagem</li>
             </ul>
           </div>

@@ -12,7 +12,7 @@ const audiences = [
   },
   {
     title: "Adultos",
-    description: "Desenvolvimento de habilidades funcionais, atividades da vida diária (AVDs) e qualidade de vida.",
+    description: "Desenvolvimento de habilidades funcionais, atividades da vida diária e qualidade de vida.",
   },
 ];
 
@@ -97,7 +97,7 @@ export default function AudienceSection() {
         {/* Additional Info */}
         <div className="mt-12 p-8 bg-blue-50 rounded-xl border border-blue-200">
           <p className="text-foreground leading-relaxed">
-            <strong>No atendimento de adultos</strong>, também trabalhamos o desenvolvimento de habilidades funcionais e atividades da vida diária (AVDs), garantindo atenção integral às necessidades individuais de cada pessoa.
+            <strong>No atendimento de adolescentes e adultos</strong>, também trabalhamos o desenvolvimento de habilidades funcionais e atividades da vida diária (AVDs), garantindo atenção integral às necessidades individuais de cada pessoa, promovendo a autonomia e independência.
           </p>
         </div>
       </div>

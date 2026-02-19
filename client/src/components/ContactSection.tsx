@@ -55,7 +55,7 @@ export default function ContactSection() {
                   <h3 className="font-bold text-primary mb-2">Telefone</h3>
                   <p className="text-foreground">(11) 98464-0809</p>
                   <p className="text-sm text-muted-foreground">
-                    Segunda a sexta: 8h às 19h | Sábado: 8h às 12h
+                    Segunda a sexta: 8h às 19h | Sábado: 8h às 13h
                   </p>
                 </div>
               </div>
