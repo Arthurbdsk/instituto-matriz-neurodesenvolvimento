@@ -11,7 +11,7 @@ export default function Footer() {
           <div>
             <div className="mb-4">
               <img
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316556941/qrkujYVdDXsyadzs.jpg"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316556941/gSOVOhWRliutQsrE.png"
                 alt="Instituto Matriz"
                 className="h-24 w-auto"
               />
