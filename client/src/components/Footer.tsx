@@ -122,10 +122,10 @@ export default function Footer() {
               </p>
             </div>
             <div className="flex gap-4 md:justify-end">
-              <a href="#" className="hover:text-white transition-colors">
+              <a href="/politica-de-privacidade" className="hover:text-white transition-colors">
                 Política de Privacidade
               </a>
-              <a href="#" className="hover:text-white transition-colors">
+              <a href="/termos-de-uso" className="hover:text-white transition-colors">
                 Termos de Uso
               </a>
             </div>
