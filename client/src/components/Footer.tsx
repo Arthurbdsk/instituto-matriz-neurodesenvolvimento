@@ -9,10 +9,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* About */}
           <div>
-            <h3 className="font-bold text-lg mb-4 flex items-center gap-2">
-              <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-                <span className="text-primary font-bold text-sm">IMN</span>
-              </div>
+            <div className="mb-4">
+              <img
+                src="/images/logo-instituto-matriz.png"
+                alt="Instituto Matriz"
+                className="h-16 w-auto"
+              />
+            </div>
+            <h3 className="font-bold text-lg mb-4">
               Instituto Matriz
             </h3>
             <p className="text-blue-100 text-sm leading-relaxed">
