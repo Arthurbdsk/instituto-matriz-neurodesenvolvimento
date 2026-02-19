@@ -13,7 +13,7 @@ export default function Footer() {
               <img
                 src="/images/logo-instituto-matriz.png"
                 alt="Instituto Matriz"
-                className="h-16 w-auto"
+                className="h-24 w-auto"
               />
             </div>
             <h3 className="font-bold text-lg mb-4">

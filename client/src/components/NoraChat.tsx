@@ -5,17 +5,17 @@ const FAQ_ITEMS = [
   {
     question: "Qual é o horário de funcionamento?",
     answer:
-      "O Instituto Matriz funciona de segunda a sexta das 8h às 19h e aos sábados das 8h às 12h.",
+      "O Instituto Matriz funciona de segunda a sexta das 8h às 19h e aos sábados das 8h às 13h.",
   },
   {
     question: "Quais serviços vocês oferecem?",
     answer:
-      "Oferecemos avaliação neuropsicológica, psicologia clínica infantil, fonoaudiologia, psicopedagogia, terapia ocupacional e acompanhamento pedagógico.",
+      "Oferecemos serviços multidisciplinares: Neuropsicologia, Psicologia, Análise do Comportamento Aplicada (ABA), Fonoaudiologia, Terapia Ocupacional com Integração Sensorial, Fisioterapia Neurofuncional, Psicopedagogia, Neuropedagogia, Musicoterapia, Arteterapia, Terapia Assistida por Equinos e Avaliações Especializadas.",
   },
   {
     question: "Como agendar uma consulta?",
     answer:
-      "Você pode agendar através do botão 'Agendar Consulta' no site, enviar um email para institutomatriz.adm@gmail.com ou ligar para (11) 98464-0809.",
+      "Você pode agendar através do botão 'Converse no WhatsApp' no site, enviar um email para contato@institutomatriz.com.br ou ligar para (11) 98464-0809.",
   },
   {
     question: "Qual é o endereço?",
@@ -30,7 +30,7 @@ const FAQ_ITEMS = [
   {
     question: "Vocês trabalham com convênios?",
     answer:
-      "Sim, trabalhamos com diversos convênios de saúde. Entre em contato para confirmar se o seu convênio é aceito.",
+      "Sim, trabalhamos com diversos convênios de saúde. Entre em contato através do WhatsApp (11) 98464-0809 para confirmar se o seu convênio é aceito.",
   },
 ];
 
@@ -133,7 +133,7 @@ export default function NoraChat() {
                   <strong>Telefone:</strong> (11) 98464-0809
                 </p>
                 <p className="text-xs text-foreground/70 mt-1">
-                  <strong>Email:</strong> institutomatriz.adm@gmail.com
+                  <strong>Email:</strong> contato@institutomatriz.com.br
                 </p>
               </div>
             </div>
