@@ -75,7 +75,7 @@ export default function FounderSection() {
                 Fundadora e Diretora do Instituto Matriz de Neurodesenvolvimento, Michelle Bedeschi é uma profissional de excelência com formação em múltiplas disciplinas que convergem para o desenvolvimento neurológico saudável.
               </p>
               <p className="text-foreground/90 mb-6 leading-relaxed">
-                Como especialista em neurociência e neuropsicopedagoga, ela alia rigor científico à abordagem humana e acolhedora, garantindo que cada avaliação, intervenção e programa seja planejado de forma individualizada, acompanhada de perto e voltada para resultados reais na vida das pessoas e famílias.
+                Como especialista em Neurociência e Neuropsicopedagoga, ela alia rigor científico à abordagem humana e acolhedora, garantindo que cada avaliação, intervenção e programa seja planejado de forma individualizada, acompanhada de perto e voltada para resultados reais na vida das pessoas e famílias.
               </p>
               <div className="bg-secondary/10 border-l-4 border-secondary p-4 rounded">
                 <p className="text-foreground font-semibold">

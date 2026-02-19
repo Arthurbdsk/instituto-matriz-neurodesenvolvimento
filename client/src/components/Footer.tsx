@@ -59,7 +59,7 @@ export default function Footer() {
               <li>Neuropsicologia e Psicologia</li>
               <li>Fonoaudiologia</li>
               <li>Terapia Ocupacional e Fisioterapia</li>
-              <li>Terapia Integrada</li>
+              <li>Terapias Integradas</li>
               <li>Educação e Aprendizagem</li>
             </ul>
           </div>
