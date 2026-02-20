@@ -19,22 +19,26 @@ const redirectToLoginIfUnauthorized = (error: unknown) => {
 
   // Only redirect if we have valid OAuth config
   const oauthPortalUrl = import.meta.env.VITE_OAUTH_PORTAL_URL;
-  if (oauthPortalUrl) {
-    try {
-      const appId = import.meta.env.VITE_APP_ID;
-      const redirectUri = `${window.location.origin}/api/oauth/callback`;
-      const state = btoa(redirectUri);
-      const url = new URL(`${oauthPortalUrl}/app-auth`);
-      url.searchParams.set("appId", appId);
-      url.searchParams.set("redirectUri", redirectUri);
-      url.searchParams.set("state", state);
-      url.searchParams.set("type", "signIn");
-      window.location.href = url.toString();
-    } catch (e) {
-      console.error('[redirectToLoginIfUnauthorized] Failed to redirect:', e);
-    }
-  } else {
-    console.warn('[redirectToLoginIfUnauthorized] OAuth not configured, staying on page');
+  const appId = import.meta.env.VITE_APP_ID;
+  
+  if (!oauthPortalUrl || !appId) {
+    console.warn('[redirectToLoginIfUnauthorized] OAuth not configured');
+    return;
+  }
+  
+  try {
+    const redirectUri = `${window.location.origin}/api/oauth/callback`;
+    const state = btoa(redirectUri);
+    
+    const params = new URLSearchParams();
+    params.set("appId", appId);
+    params.set("redirectUri", redirectUri);
+    params.set("state", state);
+    params.set("type", "signIn");
+    
+    window.location.href = `${oauthPortalUrl}/app-auth?${params.toString()}`;
+  } catch (e) {
+    console.error('[redirectToLoginIfUnauthorized] Failed to redirect:', e);
   }
 };
 

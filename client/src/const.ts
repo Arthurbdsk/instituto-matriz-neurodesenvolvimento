@@ -1,28 +1,30 @@
 export { COOKIE_NAME, ONE_YEAR_MS } from "@shared/const";
 
-// Generate login URL at runtime so redirect URI reflects the current origin.
+// Safe login URL generator that validates environment variables first
 export const getLoginUrl = () => {
   const oauthPortalUrl = import.meta.env.VITE_OAUTH_PORTAL_URL;
   const appId = import.meta.env.VITE_APP_ID;
   
-  // Fallback for production when env vars might be missing
+  // Return home if OAuth is not configured
   if (!oauthPortalUrl || !appId) {
-    console.warn('[getLoginUrl] Missing OAuth environment variables');
-    return '/'; // Fallback to home
+    console.warn('[getLoginUrl] OAuth not configured, returning home');
+    return '/';
   }
   
-  const redirectUri = `${window.location.origin}/api/oauth/callback`;
-  const state = btoa(redirectUri);
-
   try {
-    const url = new URL(`${oauthPortalUrl}/app-auth`);
-    url.searchParams.set("appId", appId);
-    url.searchParams.set("redirectUri", redirectUri);
-    url.searchParams.set("state", state);
-    url.searchParams.set("type", "signIn");
-    return url.toString();
+    // Build URL manually without new URL() to avoid parsing errors
+    const redirectUri = `${window.location.origin}/api/oauth/callback`;
+    const state = btoa(redirectUri);
+    
+    const params = new URLSearchParams();
+    params.set("appId", appId);
+    params.set("redirectUri", redirectUri);
+    params.set("state", state);
+    params.set("type", "signIn");
+    
+    return `${oauthPortalUrl}/app-auth?${params.toString()}`;
   } catch (error) {
-    console.error('[getLoginUrl] Invalid URL:', error);
+    console.error('[getLoginUrl] Error building login URL:', error);
     return '/';
   }
 };
