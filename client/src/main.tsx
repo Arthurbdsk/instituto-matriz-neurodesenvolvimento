@@ -14,32 +14,10 @@ const redirectToLoginIfUnauthorized = (error: unknown) => {
   if (typeof window === "undefined") return;
 
   const isUnauthorized = error.message === UNAUTHED_ERR_MSG;
-
   if (!isUnauthorized) return;
 
-  // Only redirect if we have valid OAuth config
-  const oauthPortalUrl = import.meta.env.VITE_OAUTH_PORTAL_URL;
-  const appId = import.meta.env.VITE_APP_ID;
-  
-  if (!oauthPortalUrl || !appId) {
-    console.warn('[redirectToLoginIfUnauthorized] OAuth not configured');
-    return;
-  }
-  
-  try {
-    const redirectUri = `${window.location.origin}/api/oauth/callback`;
-    const state = btoa(redirectUri);
-    
-    const params = new URLSearchParams();
-    params.set("appId", appId);
-    params.set("redirectUri", redirectUri);
-    params.set("state", state);
-    params.set("type", "signIn");
-    
-    window.location.href = `${oauthPortalUrl}/app-auth?${params.toString()}`;
-  } catch (e) {
-    console.error('[redirectToLoginIfUnauthorized] Failed to redirect:', e);
-  }
+  console.warn('[redirectToLoginIfUnauthorized] Unauthorized access detected');
+  // For public sites, just log the error instead of redirecting
 };
 
 queryClient.getQueryCache().subscribe(event => {
