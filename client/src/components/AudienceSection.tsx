@@ -38,8 +38,20 @@ const conditions = [
 
 function CounterAnimation({ target, duration = 1200 }: { target: number; duration?: number }) {
   const [count, setCount] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    // Pequeno delay para garantir que o componente está renderizado
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
     let startTime: number | null = null;
     
     // Easing function for smooth acceleration
@@ -57,7 +69,7 @@ function CounterAnimation({ target, duration = 1200 }: { target: number; duratio
       }
     };
     requestAnimationFrame(animate);
-  }, [target, duration]);
+  }, [target, duration, isVisible]);
 
   return <span>{count}</span>;
 }
