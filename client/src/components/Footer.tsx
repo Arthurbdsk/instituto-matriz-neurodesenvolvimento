@@ -13,7 +13,7 @@ export default function Footer() {
               <img
                 src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316556941/aHaMeTVtEOFZnJco.jpg"
                 alt="Instituto Matriz"
-                className="h-24 w-auto"
+                className="h-32 w-auto"
               />
             </div>
             <h3 className="font-bold text-lg mb-4">
