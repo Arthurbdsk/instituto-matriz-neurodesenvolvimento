@@ -62,7 +62,7 @@ export default function ServicesSection() {
     <section id="services" className="py-20 md:py-32 bg-muted/30">
       <div className="container">
         {/* Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
+        <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
             Áreas de Atuação
           </h2>
@@ -75,16 +75,20 @@ export default function ServicesSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => {
             const Icon = service.icon;
+            const staggerClass = `animate-stagger-${(index % 5) + 1}`;
             return (
               <Card
                 key={index}
-                className="p-8 hover:shadow-xl transition-all duration-300 border-border bg-white"
+                className={`p-8 hover:shadow-2xl transition-all duration-300 border-border bg-white animate-fade-in-up ${staggerClass} hover:scale-110 hover:-translate-y-4 cursor-pointer group`}
+                style={{
+                  perspective: "1000px",
+                }}
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-3 bg-secondary/10 rounded-lg">
-                    <Icon className="text-secondary" size={28} />
+                <div className="flex items-center gap-3 mb-4 group-hover:translate-x-2 transition-transform duration-300">
+                  <div className="p-3 bg-secondary/10 rounded-lg group-hover:bg-secondary/20 group-hover:scale-110 transition-all duration-300">
+                    <Icon className="text-secondary group-hover:rotate-12 transition-transform duration-300" size={28} />
                   </div>
-                  <h3 className="text-xl font-bold text-primary">
+                  <h3 className="text-xl font-bold text-primary group-hover:text-secondary transition-colors duration-300">
                     {service.title}
                   </h3>
                 </div>
@@ -92,9 +96,12 @@ export default function ServicesSection() {
                   {service.items.map((item, itemIndex) => (
                     <li
                       key={itemIndex}
-                      className="flex items-start gap-2 text-sm text-foreground"
+                      className="flex items-start gap-2 text-sm text-foreground group-hover:translate-x-1 transition-transform duration-300"
+                      style={{
+                        transitionDelay: `${itemIndex * 30}ms`,
+                      }}
                     >
-                      <span className="text-secondary font-bold mt-1">•</span>
+                      <span className="text-secondary font-bold mt-1 group-hover:scale-125 transition-transform duration-300">•</span>
                       <span>{item}</span>
                     </li>
                   ))}

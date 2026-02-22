@@ -39,7 +39,7 @@ export default function AboutSection() {
     <section id="about" className="py-20 md:py-32 bg-white">
       <div className="container">
         {/* Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
+        <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
             Quem Somos
           </h2>
@@ -55,14 +55,16 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {values.map((value, index) => {
             const Icon = value.icon;
+            const staggerClass = `animate-stagger-${(index % 5) + 1}`;
             return (
               <Card
                 key={index}
-                className="p-6 hover:shadow-lg transition-shadow duration-300 border-border" style={{borderColor: '#9e9e9e'}}
+                className={`p-6 hover:shadow-xl transition-all duration-300 border-border animate-fade-in-up ${staggerClass} hover:scale-105 hover:-translate-y-2`}
+                style={{borderColor: '#9e9e9e'}}
               >
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-primary/10 rounded-lg">
-                    <Icon className="text-primary" size={24} />
+                  <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                    <Icon className="text-primary group-hover:scale-110 transition-transform" size={24} />
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-primary mb-2">
@@ -80,19 +82,19 @@ export default function AboutSection() {
 
         {/* Mission, Vision, Values */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 pt-16 border-t border-border">
-          <div className="text-center">
+          <div className="text-center animate-fade-in-up animate-stagger-1 hover:scale-105 transition-transform duration-300">
             <h3 className="text-2xl font-bold text-primary mb-4">Missão</h3>
             <p className="text-foreground leading-relaxed">
               Proporcionar desenvolvimento humano integral por meio da integração de ciência, saúde mental, educação e terapias especializadas.
             </p>
           </div>
-          <div className="text-center">
+          <div className="text-center animate-fade-in-up animate-stagger-2 hover:scale-105 transition-transform duration-300">
             <h3 className="text-2xl font-bold text-primary mb-4">Visão</h3>
             <p className="text-foreground leading-relaxed">
               Ser referência nacional e internacional em intervenções de neurodesenvolvimento, saúde mental e educação.
             </p>
           </div>
-          <div className="text-center">
+          <div className="text-center animate-fade-in-up animate-stagger-3 hover:scale-105 transition-transform duration-300">
             <h3 className="text-2xl font-bold text-primary mb-4">Compromisso</h3>
             <p className="text-foreground leading-relaxed">
               Cada pessoa é respeitada em sua singularidade, história e tempo. Aprender é processo, não produto.
