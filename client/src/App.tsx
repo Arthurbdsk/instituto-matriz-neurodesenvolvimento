@@ -10,6 +10,7 @@ import TermsOfUse from "./pages/TermsOfUse";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 function Router() {
+  // Force rebuild - 2026-02-22 12:15
   // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
