@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, TrendingUp } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const audiences = [
@@ -36,19 +36,24 @@ const conditions = [
   },
 ];
 
-function CounterAnimation({ target, duration = 2000 }: { target: number; duration?: number }) {
+function CounterAnimation({ target, duration = 1200 }: { target: number; duration?: number }) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
     let startTime: number | null = null;
+    
+    // Easing function for smooth acceleration
+    const easeOutQuad = (t: number) => t * (2 - t);
+    
     const animate = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
-      const progress = (timestamp - startTime) / duration;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const easeProgress = easeOutQuad(progress);
+      
+      setCount(Math.floor(easeProgress * target));
+      
       if (progress < 1) {
-        setCount(Math.floor(progress * target));
         requestAnimationFrame(animate);
-      } else {
-        setCount(target);
       }
     };
     requestAnimationFrame(animate);
@@ -90,19 +95,25 @@ export default function AudienceSection() {
 
         {/* Stats Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 animate-fade-in-up animate-stagger-1 hover:shadow-lg transition-shadow">
-            <p className="text-muted-foreground mb-2">Anos de Experiência</p>
-            <p className="text-5xl font-bold text-primary">
+          <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 animate-fade-in-up animate-stagger-1 hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer group border-2 border-blue-200 hover:border-blue-400">
+            <div className="flex items-center justify-between mb-4">
+              <p className="text-muted-foreground font-semibold group-hover:text-primary transition-colors">Anos de Experiência</p>
+              <TrendingUp className="text-primary group-hover:scale-125 transition-transform" size={24} />
+            </div>
+            <p className="text-7xl font-black text-primary group-hover:scale-110 transition-transform duration-300 inline-block origin-left">
               <CounterAnimation target={20} />+
             </p>
-            <p className="text-foreground mt-2">Atuando em saúde, educação e neurodesenvolvimento</p>
+            <p className="text-foreground mt-4 font-medium group-hover:text-primary/80 transition-colors">Atuando em saúde, educação e neurodesenvolvimento</p>
           </div>
-          <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 animate-fade-in-up animate-stagger-2 hover:shadow-lg transition-shadow">
-            <p className="text-muted-foreground mb-2">Famílias Atendidas</p>
-            <p className="text-5xl font-bold text-secondary">
+          <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 animate-fade-in-up animate-stagger-2 hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer group border-2 border-green-200 hover:border-green-400">
+            <div className="flex items-center justify-between mb-4">
+              <p className="text-muted-foreground font-semibold group-hover:text-secondary transition-colors">Famílias Atendidas</p>
+              <TrendingUp className="text-secondary group-hover:scale-125 transition-transform" size={24} />
+            </div>
+            <p className="text-7xl font-black text-secondary group-hover:scale-110 transition-transform duration-300 inline-block origin-left">
               <CounterAnimation target={1000} />+
             </p>
-            <p className="text-foreground mt-2">Com abordagem baseada em evidências científicas</p>
+            <p className="text-foreground mt-4 font-medium group-hover:text-secondary/80 transition-colors">Com abordagem baseada em evidências científicas</p>
           </div>
         </div>
 
