@@ -20,7 +20,7 @@ export default function Footer() {
               Instituto Matriz
             </h3>
             <p className="text-blue-100 text-sm leading-relaxed">
-              Centro de referência em terapias multidisciplinares, promovendo uma melhor qualidade de vida para TEA, TDAH, Sindrome de Down e tantos outros Transtornos de Desenvolvimento.
+              Centro de referência em terapias multidisciplinares, promovendo uma melhor qualidade de vida para TEA, TDAH, Sindrome de Down e tantos outros Transtornos de Neurodesenvolvimento.
             </p>
           </div>
 
