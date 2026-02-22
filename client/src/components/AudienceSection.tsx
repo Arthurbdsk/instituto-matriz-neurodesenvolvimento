@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { CheckCircle2, TrendingUp } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const audiences = [
   {
@@ -36,21 +36,11 @@ const conditions = [
   },
 ];
 
-function CounterAnimation({ target, duration = 1200 }: { target: number; duration?: number }) {
+function CounterAnimation({ target, duration = 1200, shouldAnimate }: { target: number; duration?: number; shouldAnimate: boolean }) {
   const [count, setCount] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Pequeno delay para garantir que o componente está renderizado
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 100);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    if (!isVisible) return;
+    if (!shouldAnimate) return;
 
     let startTime: number | null = null;
     
@@ -69,12 +59,40 @@ function CounterAnimation({ target, duration = 1200 }: { target: number; duratio
       }
     };
     requestAnimationFrame(animate);
-  }, [target, duration, isVisible]);
+  }, [target, duration, shouldAnimate]);
 
   return <span>{count}</span>;
 }
 
 export default function AudienceSection() {
+  const statsRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          // Parar de observar após a animação começar
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        threshold: 0.3, // Dispara quando 30% do elemento está visível
+      }
+    );
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    return () => {
+      if (statsRef.current) {
+        observer.unobserve(statsRef.current);
+      }
+    };
+  }, []);
+
   return (
     <section id="audience" className="py-20 md:py-32 bg-white">
       <div className="container">
@@ -106,14 +124,14 @@ export default function AudienceSection() {
         </div>
 
         {/* Stats Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div ref={statsRef} className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 animate-fade-in-up animate-stagger-1 hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer group border-2 border-blue-200 hover:border-blue-400">
             <div className="flex items-center justify-between mb-4">
               <p className="text-muted-foreground font-semibold group-hover:text-primary transition-colors">Anos de Experiência</p>
               <TrendingUp className="text-primary group-hover:scale-125 transition-transform" size={24} />
             </div>
             <p className="text-7xl font-black text-primary group-hover:scale-110 transition-transform duration-300 inline-block origin-left">
-              <CounterAnimation target={20} />+
+              <CounterAnimation target={20} shouldAnimate={isVisible} />+
             </p>
             <p className="text-foreground mt-4 font-medium group-hover:text-primary/80 transition-colors">Atuando em saúde, educação e neurodesenvolvimento</p>
           </div>
@@ -123,7 +141,7 @@ export default function AudienceSection() {
               <TrendingUp className="text-secondary group-hover:scale-125 transition-transform" size={24} />
             </div>
             <p className="text-7xl font-black text-secondary group-hover:scale-110 transition-transform duration-300 inline-block origin-left">
-              <CounterAnimation target={1000} />+
+              <CounterAnimation target={1000} shouldAnimate={isVisible} />+
             </p>
             <p className="text-foreground mt-4 font-medium group-hover:text-secondary/80 transition-colors">Com abordagem baseada em evidências científicas</p>
           </div>
