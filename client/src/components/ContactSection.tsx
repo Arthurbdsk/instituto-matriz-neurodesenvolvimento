@@ -36,8 +36,8 @@ export default function ContactSection() {
       <div className="container">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <Reveal direction="up" delay={0.1} width="100%">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6 text-center">
+          <Reveal direction="up" delay={0.1}>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
               Entre em Contato
             </h2>
           </Reveal>
@@ -54,7 +54,7 @@ export default function ContactSection() {
             <Reveal direction="left" delay={0.1} width="100%">
               <Card className="p-8 border-border hover:shadow-lg transition-shadow">
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-primary/10 rounded-lg shrink-0">
+                  <div className="p-3 bg-primary/10 rounded-lg">
                     <Phone className="text-primary" size={24} />
                   </div>
                   <div>
@@ -71,7 +71,7 @@ export default function ContactSection() {
             <Reveal direction="left" delay={0.2} width="100%">
               <Card className="p-8 border-border hover:shadow-lg transition-shadow">
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-primary/10 rounded-lg shrink-0">
+                  <div className="p-3 bg-primary/10 rounded-lg">
                     <Mail className="text-primary" size={24} />
                   </div>
                   <div>
@@ -88,7 +88,7 @@ export default function ContactSection() {
             <Reveal direction="left" delay={0.3} width="100%">
               <Card className="p-8 border-border hover:shadow-lg transition-shadow">
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-primary/10 rounded-lg shrink-0">
+                  <div className="p-3 bg-primary/10 rounded-lg">
                     <MapPin className="text-primary" size={24} />
                   </div>
                   <div>

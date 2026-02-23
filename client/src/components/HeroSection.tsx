@@ -12,27 +12,25 @@ export default function HeroSection({ onCtaClick }: HeroSectionProps) {
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
           {/* Left Content */}
-          <div className="flex flex-col gap-6 text-center md:text-left items-center md:items-start">
+          <div className="flex flex-col gap-6">
             <div className="space-y-4">
-              <Reveal direction="up" delay={0.1} width="100%">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight">
+              <Reveal direction="left" delay={0.1}>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight">
                   Instituto Matriz de Neurodesenvolvimento
                 </h1>
               </Reveal>
-              <Reveal direction="up" delay={0.2} width="100%">
+              <Reveal direction="left" delay={0.2}>
                 <p className="text-xl text-muted-foreground font-medium">
                   Ciência, neurodesenvolvimento e humanidade integrados.
                 </p>
               </Reveal>
             </div>
 
-            <Reveal direction="up" delay={0.3} width="100%">
-              <p className="text-lg text-foreground leading-relaxed max-w-lg mx-auto md:mx-0">
+            <Reveal direction="left" delay={0.3}>
+              <p className="text-lg text-foreground leading-relaxed max-w-lg">
                 Há mais de 20 anos atuando nas áreas de saúde, educação e neurodesenvolvimento humano, o Instituto Matriz oferece acompanhamento interdisciplinar especializado em Transtornos do Neurodesenvolvimento.
-                <br className="hidden md:block" /><br className="hidden md:block" />
-                <span className="block mt-4 md:mt-0">
-                  Já acompanhamos mais de 1.000 famílias com uma abordagem baseada em evidências científicas, aliando rigor técnico, escuta qualificada e planejamento individualizado.
-                </span>
+                <br /><br />
+                Já acompanhamos mais de 1.000 famílias com uma abordagem baseada em evidências científicas, aliando rigor técnico, escuta qualificada e planejamento individualizado.
               </p>
             </Reveal>
 

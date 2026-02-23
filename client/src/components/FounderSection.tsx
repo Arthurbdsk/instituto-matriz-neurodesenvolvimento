@@ -1,4 +1,5 @@
 import { Reveal } from "./Reveal";
+import { MapPin, Phone, Mail, Clock, Star, Users, Heart } from "lucide-react";
 
 export default function FounderSection() {
   const specializations = [
@@ -25,36 +26,36 @@ export default function FounderSection() {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-br from-primary/5 to-secondary/5">
+    <section className="py-24 bg-slate-50">
       <div className="container">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <Reveal direction="up" delay={0.1}>
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+            <h2 className="text-4xl md:text-5xl font-black text-primary mb-6">
               O Diferencial do Instituto Matriz
             </h2>
           </Reveal>
           <Reveal direction="up" delay={0.2}>
-            <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
+            <p className="text-xl text-foreground/70 max-w-3xl mx-auto font-medium">
               Neurociência, excelência científica e cuidado humano em cada atendimento, para crianças e adultos.
             </p>
           </Reveal>
         </div>
 
         {/* Founder Section */}
-        <div className="bg-white rounded-lg shadow-lg p-8 md:p-12 mb-12">
+        <div className="bg-white rounded-[40px] shadow-2xl p-8 md:p-16 mb-20 border border-primary/5">
           {/* Mobile Layout - Image with name below */}
-          <div className="md:hidden mb-8">
+          <div className="md:hidden mb-12">
             <Reveal direction="up" delay={0.1} width="100%">
               <div className="relative w-full max-w-sm mx-auto">
-                <div className="rounded-lg overflow-hidden shadow-lg">
+                <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-secondary/20">
                   <img
                     src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316556941/RckQuGRTgLfCkIgm.jpg"
                     alt="Michelle Bedeschi"
                     className="w-full h-auto object-cover"
                   />
                 </div>
-                <h3 className="text-2xl font-bold text-secondary mt-4 text-center">
+                <h3 className="text-3xl font-black text-secondary mt-6 text-center">
                   Michelle Bedeschi
                 </h3>
               </div>
@@ -62,11 +63,11 @@ export default function FounderSection() {
           </div>
 
           {/* Desktop Layout */}
-          <div className="hidden md:grid md:grid-cols-2 gap-8 items-start">
+          <div className="hidden md:grid md:grid-cols-2 gap-16 items-center">
             {/* Left: Image */}
             <div className="flex justify-center md:order-2">
               <Reveal direction="right" delay={0.2} distance={80}>
-                <div className="relative w-full max-w-sm rounded-lg overflow-hidden shadow-lg">
+                <div className="relative w-full max-w-md rounded-[40px] overflow-hidden shadow-2xl border-8 border-secondary/10">
                   <img
                     src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316556941/RckQuGRTgLfCkIgm.jpg"
                     alt="Michelle Bedeschi"
@@ -79,23 +80,23 @@ export default function FounderSection() {
             {/* Right: Text */}
             <div className="md:order-1">
               <Reveal direction="left" delay={0.1}>
-                <h3 className="text-2xl md:text-3xl font-bold text-primary mb-4">
+                <h3 className="text-4xl md:text-5xl font-black text-primary mb-8">
                   Michelle Bedeschi
                 </h3>
               </Reveal>
               <Reveal direction="left" delay={0.2}>
-                <p className="text-foreground/90 mb-4 leading-relaxed">
+                <p className="text-xl text-foreground/80 mb-6 leading-relaxed font-medium">
                   Fundadora e Diretora do Instituto Matriz de Neurodesenvolvimento, Michelle Bedeschi é uma profissional de excelência com formação em múltiplas disciplinas que convergem para o desenvolvimento neurológico saudável.
                 </p>
               </Reveal>
               <Reveal direction="left" delay={0.3}>
-                <p className="text-foreground/90 mb-6 leading-relaxed">
-                  Como especialista em Neurociência e Neuropsicopedagoga, ela alia rigor científico à abordagem humana e acolhedora, garantindo que cada avaliação, intervenção e programa seja planejado de forma individualizada, acompanhada de perto e voltada para resultados reais na vida das pessoas e famílias.
+                <p className="text-xl text-foreground/80 mb-8 leading-relaxed font-medium">
+                  Como especialista em Neurociência e Neuropsicopedagoga, ela alia rigor científico à abordagem humana e acolhedora, garantindo que cada avaliação, intervenção e programa seja planejado de forma individualizada.
                 </p>
               </Reveal>
               <Reveal direction="up" delay={0.4}>
-                <div className="bg-secondary/10 border-l-4 border-secondary p-4 rounded">
-                  <p className="text-foreground font-semibold">
+                <div className="bg-secondary/10 border-l-8 border-secondary p-8 rounded-3xl shadow-inner">
+                  <p className="text-xl text-primary font-bold italic leading-relaxed">
                     “Cada pessoa é única. Nosso compromisso é compreender sua história e potencializar seu desenvolvimento de forma completa e integrada.”
                   </p>
                 </div>
@@ -104,32 +105,35 @@ export default function FounderSection() {
           </div>
 
           {/* Mobile Text Content */}
-          <div className="md:hidden text-center">
-            <Reveal direction="up" delay={0.2} width="100%">
-              <p className="text-foreground/90 mb-4 leading-relaxed">
+          <div className="md:hidden space-y-6">
+            <Reveal direction="up" delay={0.2}>
+              <p className="text-lg text-foreground/80 leading-relaxed font-medium">
                 Fundadora e Diretora do Instituto Matriz de Neurodesenvolvimento, Michelle Bedeschi é uma profissional de excelência com formação em múltiplas disciplinas que convergem para o desenvolvimento neurológico saudável.
               </p>
             </Reveal>
-            <Reveal direction="up" delay={0.3} width="100%">
-              <p className="text-foreground/90 mb-6 leading-relaxed">
+            <Reveal direction="up" delay={0.3}>
+              <p className="text-lg text-foreground/80 leading-relaxed font-medium">
                 Como especialista em neurociência e neuropedagoga, ela alia rigor científico à abordagem humana e acolhedora, garantindo que cada avaliação, intervenção e programa seja planejado de forma individualizada.
               </p>
             </Reveal>
-            <Reveal direction="up" delay={0.4} width="100%">
-              <div className="bg-secondary/10 border-l-4 border-secondary p-4 rounded text-left">
-                <p className="text-foreground font-semibold italic">
+            <Reveal direction="up" delay={0.4}>
+              <div className="bg-secondary/10 border-l-4 border-secondary p-6 rounded-2xl">
+                <p className="text-lg text-primary font-bold italic">
                   "Cada pessoa é única. Nosso compromisso é compreender sua história e potencializar seu desenvolvimento de forma completa e integrada."
                 </p>
               </div>
             </Reveal>
           </div>
 
-          {/* Specializations - Below the main content */}
-          <div className="mt-12 pt-8 border-t border-secondary/20">
+          {/* Specializations */}
+          <div className="mt-20 pt-12 border-t border-slate-100">
             <Reveal direction="up" delay={0.1}>
-              <h4 className="text-xl font-bold text-primary mb-6">Especializações</h4>
+              <h4 className="text-2xl font-black text-primary mb-10 flex items-center gap-3">
+                <Star className="text-secondary fill-secondary" size={28} />
+                Especializações
+              </h4>
             </Reveal>
-            <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
+            <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
               {specializations.map((spec, index) => (
                 <Reveal 
                   key={index} 
@@ -138,10 +142,10 @@ export default function FounderSection() {
                   width="100%"
                 >
                   <div
-                    className="bg-gradient-to-br from-primary/5 to-secondary/5 border-2 border-secondary/20 rounded-lg p-4 h-full hover:border-secondary/50 transition-colors"
+                    className="bg-slate-50 border-2 border-transparent hover:border-secondary/30 rounded-3xl p-6 h-full transition-all hover:shadow-xl hover:-translate-y-1 group"
                   >
-                    <h5 className="font-bold text-primary mb-2 text-sm">{spec.title}</h5>
-                    <p className="text-xs text-foreground/70">{spec.description}</p>
+                    <h5 className="font-black text-primary mb-3 text-base group-hover:text-secondary transition-colors">{spec.title}</h5>
+                    <p className="text-sm text-foreground/70 font-bold leading-snug">{spec.description}</p>
                   </div>
                 </Reveal>
               ))}
@@ -149,58 +153,105 @@ export default function FounderSection() {
           </div>
         </div>
 
-        {/* Team Section */}
+        {/* Team Section - RE-DESIGNED FOR IMPACT */}
         <Reveal direction="up" delay={0.1} width="100%">
-          <div className="bg-white rounded-lg shadow-lg p-8 md:p-12">
-            <h3 className="text-2xl font-bold text-primary mb-6">Nossa Equipe</h3>
-            <p className="text-foreground/90 mb-6 leading-relaxed">
-              O Instituto Matriz é composto por profissionais de alto nível, selecionados por critérios rigorosos de excelência técnica, ética profissional e alinhamento científico.
-            </p>
+          <div className="bg-white rounded-[48px] shadow-2xl p-8 md:p-20 border border-primary/5 overflow-hidden relative">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -mr-32 -mt-32 blur-3xl"></div>
+            
+            <div className="relative z-10">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="p-4 bg-primary/10 rounded-2xl text-primary">
+                  <Users size={32} />
+                </div>
+                <h3 className="text-3xl md:text-5xl font-black text-primary">Nossa Equipe</h3>
+              </div>
+              
+              <p className="text-xl text-foreground/70 mb-12 leading-relaxed font-bold max-w-4xl">
+                O Instituto Matriz é composto por profissionais de alto nível, selecionados por critérios rigorosos de excelência técnica, ética profissional e alinhamento científico.
+              </p>
 
-            <div className="grid md:grid-cols-3 gap-6">
-              <Reveal direction="up" delay={0.2} width="100%">
-                <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg p-6 h-full">
-                  <div className="text-3xl font-bold text-primary mb-2">Renomadas</div>
-                  <p className="text-foreground/80">
-                    Formação nas mais prestigiadas universidades da América Latina.
+              <div className="grid md:grid-cols-3 gap-8">
+                <Reveal direction="up" delay={0.2} width="100%">
+                  <div className="bg-blue-50/50 border border-blue-100 rounded-[32px] p-10 h-full shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 group">
+                    <div className="text-4xl font-black text-primary mb-4 group-hover:scale-105 transition-transform origin-left">Renomadas</div>
+                    <p className="text-lg text-foreground/70 font-bold leading-tight">
+                      Formação nas mais prestigiadas universidades da América Latina.
+                    </p>
+                  </div>
+                </Reveal>
+                <Reveal direction="up" delay={0.3} width="100%">
+                  <div className="bg-green-50/50 border border-green-100 rounded-[32px] p-10 h-full shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 group">
+                    <div className="text-4xl font-black text-secondary mb-4 group-hover:scale-105 transition-transform origin-left">Especialistas</div>
+                    <p className="text-lg text-foreground/70 font-bold leading-tight">
+                      Profissionais com expertise em suas respectivas áreas de atuação.
+                    </p>
+                  </div>
+                </Reveal>
+                <Reveal direction="up" delay={0.4} width="100%">
+                  <div className="bg-amber-50/50 border border-amber-100 rounded-[32px] p-10 h-full shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 group">
+                    <div className="text-4xl font-black text-amber-600 mb-4 group-hover:scale-105 transition-transform origin-left">Dedicados</div>
+                    <p className="text-lg text-foreground/70 font-bold leading-tight">
+                      Comprometidos com o desenvolvimento integral de cada paciente.
+                    </p>
+                  </div>
+                </Reveal>
+              </div>
+
+              <Reveal direction="up" delay={0.5} width="100%">
+                <div className="mt-12 p-10 bg-secondary/10 rounded-[32px] border-l-[12px] border-secondary shadow-xl">
+                  <p className="text-xl md:text-2xl text-primary font-black leading-relaxed">
+                    Cada membro da equipe compartilha da missão do Instituto: oferecer atendimento de excelência, baseado em evidências científicas, com sensibilidade às necessidades individuais.
                   </p>
                 </div>
               </Reveal>
-              <Reveal direction="up" delay={0.3} width="100%">
-                <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg p-6 h-full">
-                  <div className="text-3xl font-bold text-primary mb-2">Especialistas</div>
-                  <p className="text-foreground/80">
-                    Profissionais com expertise em suas respectivas áreas de atuação.
-                  </p>
-                </div>
-              </Reveal>
-              <Reveal direction="up" delay={0.4} width="100%">
-                <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg p-6 h-full">
-                  <div className="text-3xl font-bold text-primary mb-2">Dedicados</div>
-                  <p className="text-foreground/80">
-                    Comprometidos com o desenvolvimento integral de cada paciente.
-                  </p>
+
+              {/* Visit Us Section - RE-DESIGNED */}
+              <Reveal direction="up" delay={0.6} width="100%">
+                <div className="mt-12 p-10 md:p-16 bg-primary text-white rounded-[40px] shadow-2xl relative overflow-hidden group">
+                  <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full -mr-48 -mb-48 blur-3xl group-hover:scale-110 transition-transform duration-700"></div>
+                  
+                  <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                      <div className="flex items-center gap-3 mb-6">
+                        <Heart className="text-secondary fill-secondary" size={32} />
+                        <h4 className="text-3xl md:text-4xl font-black">Visite-nos</h4>
+                      </div>
+                      <div className="space-y-6">
+                        <div className="flex items-start gap-4">
+                          <MapPin className="text-secondary shrink-0" size={28} />
+                          <p className="text-xl font-bold">Alameda Madeira, 222 - Conjunto 92, Barueri, Brazil 06454-010</p>
+                        </div>
+                        <div className="flex items-center gap-4">
+                          <Phone className="text-secondary shrink-0" size={28} />
+                          <p className="text-xl font-bold">(11) 98464-0809</p>
+                        </div>
+                        <div className="flex items-center gap-4">
+                          <Mail className="text-secondary shrink-0" size={28} />
+                          <p className="text-xl font-bold">contato@institutomatriz.com.br</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
+                      <div className="flex items-center gap-3 mb-4">
+                        <Clock className="text-secondary" size={24} />
+                        <p className="text-xl font-black">Horário de Atendimento</p>
+                      </div>
+                      <div className="space-y-2 text-lg font-bold opacity-90">
+                        <p>Segunda à sexta: 8h às 19h</p>
+                        <p>Sábado: 8h às 13h</p>
+                      </div>
+                      <button 
+                        onClick={() => window.open('https://wa.me/5511984640809', '_blank')}
+                        className="mt-8 w-full bg-secondary hover:bg-secondary/90 text-white py-5 rounded-2xl text-xl font-black transition-all hover:-translate-y-1 shadow-xl"
+                      >
+                        Agendar agora
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </Reveal>
             </div>
-
-            <Reveal direction="up" delay={0.5} width="100%">
-              <div className="mt-8 p-6 bg-secondary/10 rounded-lg border-l-4 border-secondary">
-                <p className="text-foreground/90 leading-relaxed">
-                  Cada membro da equipe compartilha da missão do Instituto: oferecer atendimento de excelência, baseado em evidências científicas, com sensibilidade às necessidades individuais de cada criança, adolescente e adulto atendido.
-                </p>
-              </div>
-            </Reveal>
-
-            <Reveal direction="up" delay={0.6} width="100%">
-              <div className="mt-8 p-6 bg-primary/5 rounded-lg">
-                <h4 className="text-lg font-bold text-primary mb-3">Visite-nos</h4>
-                <p className="text-foreground/90 mb-2">Alameda Madeira, 222 - Conjunto 92, Barueri, Brazil 06454-010</p>
-                <p className="text-foreground/90 mb-2">Telefone: (11) 98464-0809</p>
-                <p className="text-foreground/90">Email: contato@institutomatriz.com.br</p>
-                <p className="text-sm text-foreground/70 mt-3">Segunda à sexta: 8h às 19h | Sábado: 8h às 13h</p>
-              </div>
-            </Reveal>
           </div>
         </Reveal>
       </div>
