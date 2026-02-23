@@ -41,8 +41,8 @@ export default function AboutSection() {
       <div className="container">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <Reveal direction="up" delay={0.1}>
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+          <Reveal direction="up" delay={0.1} width="100%">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6 text-center">
               Quem Somos
             </h2>
           </Reveal>
@@ -74,7 +74,7 @@ export default function AboutSection() {
                   style={{borderColor: '#9e9e9e'}}
                 >
                   <div className="flex items-start gap-4">
-                    <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                    <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors shrink-0">
                       <Icon className="text-primary group-hover:scale-110 transition-transform" size={24} />
                     </div>
                     <div>

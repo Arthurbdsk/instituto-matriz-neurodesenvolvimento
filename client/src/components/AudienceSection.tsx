@@ -37,7 +37,7 @@ const conditions = [
   },
 ];
 
-function CounterAnimation({ target, duration = 1200, shouldAnimate }: { target: number; duration?: number; shouldAnimate: boolean }) {
+function CounterAnimation({ target, duration = 2700, shouldAnimate }: { target: number; duration?: number; shouldAnimate: boolean }) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -73,11 +73,12 @@ export default function AudienceSection() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.unobserve(entry.target);
+        } else {
+          setIsVisible(false);
         }
       },
       {
-        threshold: 0.3,
+        threshold: 0.1,
       }
     );
 
@@ -97,8 +98,8 @@ export default function AudienceSection() {
       <div className="container">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <Reveal direction="up" delay={0.1}>
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+          <Reveal direction="up" delay={0.1} width="100%">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6 text-center">
               Público Atendido
             </h2>
           </Reveal>

@@ -64,8 +64,8 @@ export default function ServicesSection() {
       <div className="container">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <Reveal direction="up" delay={0.1}>
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+          <Reveal direction="up" delay={0.1} width="100%">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6 text-center">
               Áreas de Atuação
             </h2>
           </Reveal>
@@ -91,7 +91,7 @@ export default function ServicesSection() {
                   className="p-8 h-full hover:shadow-2xl transition-all duration-300 border-border bg-white hover:scale-105 hover:-translate-y-2 cursor-pointer group"
                 >
                   <div className="flex items-center gap-3 mb-4 group-hover:translate-x-2 transition-transform duration-300">
-                    <div className="p-3 bg-secondary/10 rounded-lg group-hover:bg-secondary/20 group-hover:scale-110 transition-all duration-300">
+                    <div className="p-3 bg-secondary/10 rounded-lg group-hover:bg-secondary/20 group-hover:scale-110 transition-all duration-300 shrink-0">
                       <Icon className="text-secondary group-hover:rotate-12 transition-transform duration-300" size={28} />
                     </div>
                     <h3 className="text-xl font-bold text-primary group-hover:text-secondary transition-colors duration-300">
@@ -104,7 +104,7 @@ export default function ServicesSection() {
                         key={itemIndex}
                         className="flex items-start gap-2 text-sm text-foreground group-hover:translate-x-1 transition-transform duration-300"
                       >
-                        <span className="text-secondary font-bold mt-1 group-hover:scale-125 transition-transform duration-300">•</span>
+                        <span className="text-secondary font-bold mt-1 group-hover:scale-125 transition-transform duration-300 shrink-0">•</span>
                         <span>{item}</span>
                       </li>
                     ))}

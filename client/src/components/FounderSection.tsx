@@ -104,20 +104,20 @@ export default function FounderSection() {
           </div>
 
           {/* Mobile Text Content */}
-          <div className="md:hidden">
-            <Reveal direction="up" delay={0.2}>
+          <div className="md:hidden text-center">
+            <Reveal direction="up" delay={0.2} width="100%">
               <p className="text-foreground/90 mb-4 leading-relaxed">
                 Fundadora e Diretora do Instituto Matriz de Neurodesenvolvimento, Michelle Bedeschi é uma profissional de excelência com formação em múltiplas disciplinas que convergem para o desenvolvimento neurológico saudável.
               </p>
             </Reveal>
-            <Reveal direction="up" delay={0.3}>
+            <Reveal direction="up" delay={0.3} width="100%">
               <p className="text-foreground/90 mb-6 leading-relaxed">
-                Como especialista em neurociência e neuropedagoga, ela alia rigor científico à abordagem humana e acolhedora, garantindo que cada avaliação, intervenção e programa seja planejado de forma individualizada, acompanhada de perto e voltada para resultados reais na vida das pessoas e famílias.
+                Como especialista em neurociência e neuropedagoga, ela alia rigor científico à abordagem humana e acolhedora, garantindo que cada avaliação, intervenção e programa seja planejado de forma individualizada.
               </p>
             </Reveal>
-            <Reveal direction="up" delay={0.4}>
-              <div className="bg-secondary/10 border-l-4 border-secondary p-4 rounded">
-                <p className="text-foreground font-semibold">
+            <Reveal direction="up" delay={0.4} width="100%">
+              <div className="bg-secondary/10 border-l-4 border-secondary p-4 rounded text-left">
+                <p className="text-foreground font-semibold italic">
                   "Cada pessoa é única. Nosso compromisso é compreender sua história e potencializar seu desenvolvimento de forma completa e integrada."
                 </p>
               </div>
