@@ -97,7 +97,7 @@ export default function FounderSection() {
               <Reveal direction="up" delay={0.4}>
                 <div className="bg-secondary/10 border-l-8 border-secondary p-8 rounded-3xl shadow-inner">
                   <p className="text-xl text-primary font-bold italic leading-relaxed">
-                    “Cada pessoa é única. Nosso compromisso é compreender sua história e potencializar seu desenvolvimento de forma completa e integrada.”
+                    "Cada pessoa é única. Nosso compromisso é compreender sua história e potencializar seu desenvolvimento de forma completa e integrada."
                   </p>
                 </div>
               </Reveal>
@@ -153,7 +153,7 @@ export default function FounderSection() {
           </div>
         </div>
 
-        {/* Team Section - RE-DESIGNED FOR IMPACT */}
+        {/* Team Section */}
         <Reveal direction="up" delay={0.1} width="100%">
           <div className="bg-white rounded-[48px] shadow-2xl p-8 md:p-20 border border-primary/5 overflow-hidden relative">
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -mr-32 -mt-32 blur-3xl"></div>
@@ -205,45 +205,53 @@ export default function FounderSection() {
                 </div>
               </Reveal>
 
-              {/* Visit Us Section - RE-DESIGNED */}
+              {/* Visit Us Section - MOBILE FIXED */}
               <Reveal direction="up" delay={0.6} width="100%">
-                <div className="mt-12 p-10 md:p-16 bg-primary text-white rounded-[40px] shadow-2xl relative overflow-hidden group">
+                <div className="mt-12 p-8 md:p-16 bg-primary text-white rounded-[40px] shadow-2xl relative overflow-hidden group">
                   <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full -mr-48 -mb-48 blur-3xl group-hover:scale-110 transition-transform duration-700"></div>
                   
-                  <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center">
+                  <div className="relative z-10 flex flex-col gap-8 md:grid md:grid-cols-2 md:gap-12 md:items-center">
+                    {/* Contact Info */}
                     <div>
                       <div className="flex items-center gap-3 mb-6">
-                        <Heart className="text-secondary fill-secondary" size={32} />
-                        <h4 className="text-3xl md:text-4xl font-black">Visite-nos</h4>
+                        <Heart className="text-secondary fill-secondary shrink-0" size={28} />
+                        <h4 className="text-2xl md:text-4xl font-black">Visite-nos</h4>
                       </div>
-                      <div className="space-y-6">
-                        <div className="flex items-start gap-4">
-                          <MapPin className="text-secondary shrink-0" size={28} />
-                          <p className="text-xl font-bold">Alameda Madeira, 222 - Conjunto 92, Barueri, Brazil 06454-010</p>
+                      <div className="space-y-5">
+                        <div className="flex items-start gap-3">
+                          <MapPin className="text-secondary shrink-0 mt-1" size={22} />
+                          <p className="text-base md:text-xl font-bold leading-snug">
+                            Alameda Madeira, 222<br />
+                            Conjunto 92, Barueri<br />
+                            CEP 06454-010
+                          </p>
                         </div>
-                        <div className="flex items-center gap-4">
-                          <Phone className="text-secondary shrink-0" size={28} />
-                          <p className="text-xl font-bold">(11) 98464-0809</p>
+                        <div className="flex items-center gap-3">
+                          <Phone className="text-secondary shrink-0" size={22} />
+                          <p className="text-base md:text-xl font-bold">(11) 98464-0809</p>
                         </div>
-                        <div className="flex items-center gap-4">
-                          <Mail className="text-secondary shrink-0" size={28} />
-                          <p className="text-xl font-bold">contato@institutomatriz.com.br</p>
+                        <div className="flex items-start gap-3">
+                          <Mail className="text-secondary shrink-0 mt-1" size={22} />
+                          <p className="text-base md:text-xl font-bold break-all">
+                            contato@institutomatriz.com.br
+                          </p>
                         </div>
                       </div>
                     </div>
                     
-                    <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
+                    {/* Hours & CTA */}
+                    <div className="bg-white/10 backdrop-blur-md rounded-3xl p-6 md:p-8 border border-white/20">
                       <div className="flex items-center gap-3 mb-4">
-                        <Clock className="text-secondary" size={24} />
-                        <p className="text-xl font-black">Horário de Atendimento</p>
+                        <Clock className="text-secondary shrink-0" size={22} />
+                        <p className="text-lg md:text-xl font-black">Horário de Atendimento</p>
                       </div>
-                      <div className="space-y-2 text-lg font-bold opacity-90">
+                      <div className="space-y-2 text-base md:text-lg font-bold opacity-90">
                         <p>Segunda à sexta: 8h às 19h</p>
                         <p>Sábado: 8h às 13h</p>
                       </div>
                       <button 
                         onClick={() => window.open('https://wa.me/5511984640809', '_blank')}
-                        className="mt-8 w-full bg-secondary hover:bg-secondary/90 text-white py-5 rounded-2xl text-xl font-black transition-all hover:-translate-y-1 shadow-xl"
+                        className="mt-6 w-full bg-secondary hover:bg-secondary/90 text-white py-4 rounded-2xl text-lg font-black transition-all hover:-translate-y-1 shadow-xl"
                       >
                         Agendar agora
                       </button>

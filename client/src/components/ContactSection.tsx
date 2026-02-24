@@ -57,7 +57,7 @@ export default function ContactSection() {
                   <div className="p-3 bg-primary/10 rounded-lg">
                     <Phone className="text-primary" size={24} />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <h3 className="font-bold text-primary mb-2">Telefone</h3>
                     <p className="text-foreground">(11) 98464-0809</p>
                     <p className="text-sm text-muted-foreground">
@@ -74,9 +74,9 @@ export default function ContactSection() {
                   <div className="p-3 bg-primary/10 rounded-lg">
                     <Mail className="text-primary" size={24} />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <h3 className="font-bold text-primary mb-2">E-mail</h3>
-                    <p className="text-foreground">contato@institutomatriz.com.br</p>
+                    <p className="text-foreground break-all">contato@institutomatriz.com.br</p>
                     <p className="text-sm text-muted-foreground">
                       Responderemos em até 24 horas
                     </p>
@@ -91,7 +91,7 @@ export default function ContactSection() {
                   <div className="p-3 bg-primary/10 rounded-lg">
                     <MapPin className="text-primary" size={24} />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <h3 className="font-bold text-primary mb-2">Localização</h3>
                     <p className="text-foreground">Alameda Madeira, 222 - Conjunto 92</p>
                     <p className="text-foreground">Barueri, Brazil 06454-010</p>

@@ -76,9 +76,9 @@ export default function Footer() {
                 <Phone size={16} className="group-hover:rotate-12 transition-transform" />
                 <span className="group-hover:text-white transition-colors">(11) 98464-0809</span>
               </div>
-              <div className="flex items-center gap-2 hover:translate-x-2 transition-transform duration-300 group">
-                <Mail size={16} className="group-hover:rotate-12 transition-transform" />
-                <span className="group-hover:text-white transition-colors">contato@institutomatriz.com.br</span>
+              <div className="flex items-start gap-2 hover:translate-x-2 transition-transform duration-300 group">
+                <Mail size={16} className="group-hover:rotate-12 transition-transform shrink-0 mt-0.5" />
+                <span className="group-hover:text-white transition-colors break-all">contato@institutomatriz.com.br</span>
               </div>
               <div className="flex items-center gap-3 mt-4">
                 <a

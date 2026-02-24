@@ -39,7 +39,7 @@ export const Reveal = ({
   };
 
   return (
-    <div ref={ref} style={{ position: "relative", width, overflow: "visible" }}>
+    <div ref={ref} style={{ position: "relative", width, overflow: "hidden" }}>
       <motion.div
         variants={getVariants()}
         initial="hidden"
