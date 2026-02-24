@@ -80,12 +80,12 @@ export default function ServicesSection() {
         {/* Header */}
         <div className="max-w-4xl mx-auto text-center mb-24">
           <Reveal direction="up" delay={0.1} width="100%">
-            <h2 className="text-5xl md:text-7xl font-black text-primary mb-10 text-center tracking-tighter leading-[0.9]">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-primary mb-10 text-center tracking-tighter leading-[0.9]">
               Áreas de <br className="hidden md:block" /> <span className="text-secondary">Atuação</span>
             </h2>
           </Reveal>
           <Reveal direction="up" delay={0.2}>
-            <p className="text-xl md:text-3xl text-foreground/60 leading-tight max-w-3xl mx-auto font-bold">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-foreground/60 leading-tight max-w-3xl mx-auto font-bold">
               O Instituto Matriz atua em todo o espectro do neurodesenvolvimento, promovendo avaliação, acompanhamento e intervenção.
             </p>
           </Reveal>
@@ -103,22 +103,22 @@ export default function ServicesSection() {
                 width="100%"
               >
                 <Card
-                  className={`p-12 h-full hover:shadow-2xl transition-all duration-500 border-2 ${service.borderColor} ${service.lightColor} hover:scale-[1.02] hover:-translate-y-2 cursor-pointer group relative overflow-hidden rounded-[48px]`}
+                  className={`p-6 sm:p-8 md:p-10 lg:p-12 h-full hover:shadow-2xl transition-all duration-500 border-2 ${service.borderColor} ${service.lightColor} hover:scale-[1.02] hover:-translate-y-2 cursor-pointer group relative overflow-hidden rounded-[32px] sm:rounded-[40px] md:rounded-[48px]`}
                 >
                   <div className="flex flex-col gap-8">
                     <div className={`p-6 ${service.color} text-white rounded-[32px] w-fit group-hover:scale-110 transition-transform duration-500 shadow-xl`}>
                       <Icon size={40} />
                     </div>
                     
-                    <h3 className="text-3xl font-black text-primary group-hover:text-primary/80 transition-colors duration-300 leading-tight">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-primary group-hover:text-primary/80 transition-colors duration-300 leading-tight">
                       {service.title}
                     </h3>
                     
-                    <ul className="space-y-5">
+                    <ul className="space-y-3 sm:space-y-4 md:space-y-5">
                       {service.items.map((item, itemIndex) => (
                         <li
                           key={itemIndex}
-                          className="flex items-start gap-4 text-lg text-foreground/70 group-hover:text-foreground transition-colors duration-300"
+                          className="flex items-start gap-3 sm:gap-4 text-sm sm:text-base md:text-lg text-foreground/70 group-hover:text-foreground transition-colors duration-300"
                         >
                           <ChevronRight className={`${service.color.replace('bg-', 'text-')} mt-1.5 shrink-0 opacity-50 group-hover:opacity-100 transition-opacity`} size={20} />
                           <span className="font-bold leading-tight">{item}</span>

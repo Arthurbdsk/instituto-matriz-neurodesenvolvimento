@@ -37,22 +37,22 @@ export default function ContactSection() {
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <Reveal direction="up" delay={0.1}>
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-6">
               Entre em Contato
             </h2>
           </Reveal>
           <Reveal direction="up" delay={0.2}>
-            <p className="text-lg text-foreground leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-foreground leading-relaxed">
               Estamos aqui para responder suas dúvidas e agendar sua consulta.
             </p>
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12">
           {/* Contact Info */}
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-5 md:space-y-6">
             <Reveal direction="left" delay={0.1} width="100%">
-              <Card className="p-8 border-border hover:shadow-lg transition-shadow">
+              <Card className="p-4 sm:p-6 md:p-8 border-border hover:shadow-lg transition-shadow">
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-primary/10 rounded-lg">
                     <Phone className="text-primary" size={24} />
@@ -69,7 +69,7 @@ export default function ContactSection() {
             </Reveal>
 
             <Reveal direction="left" delay={0.2} width="100%">
-              <Card className="p-8 border-border hover:shadow-lg transition-shadow">
+              <Card className="p-4 sm:p-6 md:p-8 border-border hover:shadow-lg transition-shadow">
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-primary/10 rounded-lg">
                     <Mail className="text-primary" size={24} />
@@ -86,7 +86,7 @@ export default function ContactSection() {
             </Reveal>
 
             <Reveal direction="left" delay={0.3} width="100%">
-              <Card className="p-8 border-border hover:shadow-lg transition-shadow">
+              <Card className="p-4 sm:p-6 md:p-8 border-border hover:shadow-lg transition-shadow">
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-primary/10 rounded-lg">
                     <MapPin className="text-primary" size={24} />
@@ -106,8 +106,7 @@ export default function ContactSection() {
             <Reveal direction="up" delay={0.4} width="100%">
               <Button
                 onClick={() => window.open("https://wa.me/5511984640809", "_blank")}
-                className="w-full bg-green-600 hover:bg-green-700 text-white flex items-center justify-center gap-2"
-                size="lg"
+                className="w-full bg-green-600 hover:bg-green-700 text-white flex items-center justify-center gap-2 py-6 sm:py-8"
               >
                 <MessageCircle size={20} />
                 Conversar no WhatsApp
@@ -117,7 +116,7 @@ export default function ContactSection() {
 
           {/* Contact Form */}
           <Reveal direction="right" delay={0.2} width="100%">
-            <Card className="p-8 border-border h-full">
+            <Card className="p-4 sm:p-6 md:p-8 border-border h-full">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">

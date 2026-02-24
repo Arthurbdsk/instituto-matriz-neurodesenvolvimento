@@ -49,7 +49,7 @@ export default function Header({ onNavClick }: HeaderProps) {
             <img
               src="/images/logo-instituto-matriz.png"
               alt="Instituto Matriz"
-              className="h-20 md:h-28 w-auto object-contain"
+              className="h-12 sm:h-16 md:h-24 lg:h-28 w-auto object-contain"
             />
           </div>
         </div>

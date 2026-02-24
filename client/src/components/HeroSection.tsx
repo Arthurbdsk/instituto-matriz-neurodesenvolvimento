@@ -15,19 +15,19 @@ export default function HeroSection({ onCtaClick }: HeroSectionProps) {
           <div className="flex flex-col gap-6">
             <div className="space-y-4">
               <Reveal direction="left" delay={0.1}>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary leading-tight">
                   Instituto Matriz de Neurodesenvolvimento
                 </h1>
               </Reveal>
               <Reveal direction="left" delay={0.2}>
-                <p className="text-xl text-muted-foreground font-medium">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground font-medium">
                   Ciência, neurodesenvolvimento e humanidade integrados.
                 </p>
               </Reveal>
             </div>
 
             <Reveal direction="left" delay={0.3}>
-              <p className="text-lg text-foreground leading-relaxed max-w-lg">
+              <p className="text-sm sm:text-base md:text-lg text-foreground leading-relaxed max-w-lg">
                 Há mais de 20 anos atuando nas áreas de saúde, educação e neurodesenvolvimento humano, o Instituto Matriz oferece acompanhamento interdisciplinar especializado em Transtornos do Neurodesenvolvimento.
                 <br /><br />
                 Já acompanhamos mais de 1.000 famílias com uma abordagem baseada em evidências científicas, aliando rigor técnico, escuta qualificada e planejamento individualizado.
@@ -35,11 +35,10 @@ export default function HeroSection({ onCtaClick }: HeroSectionProps) {
             </Reveal>
 
             <Reveal direction="up" delay={0.4}>
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <div className="flex flex-col gap-3 sm:gap-4 pt-4">
                 <Button
                   onClick={() => window.open("https://wa.me/5511984640809", "_blank")}
-                  size="lg"
-                  className="bg-green-500 hover:bg-green-600 text-white flex items-center gap-2 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                  className="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white flex items-center justify-center gap-2 transition-all duration-300 hover:scale-105 hover:shadow-lg py-6 sm:py-8"
                 >
                   <MessageCircle size={20} />
                   Converse no WhatsApp
@@ -47,8 +46,7 @@ export default function HeroSection({ onCtaClick }: HeroSectionProps) {
                 <Button
                   onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
                   variant="outline"
-                  size="lg"
-                  className="border-primary text-primary hover:bg-primary/5 transition-all duration-300 hover:scale-105"
+                  className="w-full sm:w-auto border-primary text-primary hover:bg-primary/5 transition-all duration-300 hover:scale-105 py-6 sm:py-8"
                 >
                   Saiba Mais
                 </Button>
