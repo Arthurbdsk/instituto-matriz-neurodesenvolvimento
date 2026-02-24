@@ -175,35 +175,35 @@ export default function AudienceSection() {
           </Reveal>
         </div>
 
-        {/* Conditions (Bento Grid) */}
+        {/* Conditions (Bento Grid) - MOBILE RESPONSIVE */}
         <Reveal direction="up" delay={0.3} width="100%">
-          <div className="bg-slate-50 rounded-[64px] p-12 md:p-24 border-2 border-primary/5 shadow-inner">
-            <div className="flex items-center gap-4 mb-16 justify-center">
-              <Sparkles className="text-primary" size={40} />
-              <h3 className="text-4xl md:text-7xl font-black text-primary text-center tracking-tighter">
+          <div className="bg-slate-50 rounded-[32px] sm:rounded-[48px] md:rounded-[64px] p-6 sm:p-8 md:p-24 border-2 border-primary/5 shadow-inner">
+            <div className="flex items-center gap-2 sm:gap-4 mb-8 sm:mb-16 justify-center flex-col sm:flex-row">
+              <Sparkles className="text-primary" size={28} />
+              <h3 className="text-2xl sm:text-4xl md:text-7xl font-black text-primary text-center tracking-tighter">
                 Condições Atendidas
               </h3>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8 md:gap-12">
               {conditions.map((condition, index) => (
                 <div
                   key={index}
-                  className={`hover:translate-x-2 transition-transform duration-300 ${condition.lightColor} p-12 rounded-[48px] shadow-lg hover:shadow-2xl border-2 border-transparent hover:border-white`}
+                  className={`hover:translate-x-2 transition-transform duration-300 ${condition.lightColor} p-4 sm:p-8 md:p-12 rounded-[24px] sm:rounded-[32px] md:rounded-[48px] shadow-lg hover:shadow-2xl border-2 border-transparent hover:border-white`}
                 >
-                  <h4 className={`text-3xl font-black ${condition.textColor} mb-8 flex items-center gap-5`}>
-                    <div className={`w-16 h-16 rounded-2xl ${condition.color} text-white flex items-center justify-center shadow-lg`}>
-                      <CheckCircle2 size={32} />
+                  <h4 className={`text-lg sm:text-2xl md:text-3xl font-black ${condition.textColor} mb-4 sm:mb-8 flex items-start gap-3 sm:gap-5`}>
+                    <div className={`w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg sm:rounded-xl md:rounded-2xl ${condition.color} text-white flex items-center justify-center shadow-lg shrink-0`}>
+                      <CheckCircle2 size={20} className="sm:w-6 sm:h-6 md:w-8 md:h-8" />
                     </div>
-                    {condition.category}
+                    <span className="leading-tight">{condition.category}</span>
                   </h4>
-                  <ul className="space-y-5">
+                  <ul className="space-y-2 sm:space-y-4 md:space-y-5">
                     {condition.items.map((item, itemIndex) => (
                       <li
                         key={itemIndex}
-                        className="text-xl font-bold text-foreground/70 flex items-center gap-4"
+                        className="text-sm sm:text-base md:text-xl font-bold text-foreground/70 flex items-start gap-2 sm:gap-3 md:gap-4"
                       >
-                        <div className={`w-3 h-3 rounded-full ${condition.color} opacity-40`}></div>
-                        {item}
+                        <div className={`w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 rounded-full ${condition.color} opacity-40 shrink-0 mt-1.5`}></div>
+                        <span>{item}</span>
                       </li>
                     ))}
                   </ul>
