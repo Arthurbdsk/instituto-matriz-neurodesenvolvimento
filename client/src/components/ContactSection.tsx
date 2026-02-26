@@ -40,12 +40,12 @@ export default function ContactSection() {
       <div className="container relative z-10">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <Reveal direction="up" delay={0.1}>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-6">
+          <Reveal direction="up" delay={0.1} width="100%">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-6 text-center">
               Dê o primeiro passo na evolução e autonomia de quem você ama
             </h2>
           </Reveal>
-          <Reveal direction="up" delay={0.2}>
+          <Reveal direction="up" delay={0.2} width="100%">
             <p className="text-sm sm:text-base md:text-lg text-foreground leading-relaxed text-center">
               Estamos aqui para responder suas dúvidas e agendar sua consulta.
             </p>

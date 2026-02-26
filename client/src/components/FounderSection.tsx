@@ -30,13 +30,13 @@ export default function FounderSection() {
       <div className="container">
         {/* Header */}
         <div className="text-center mb-16">
-          <Reveal direction="up" delay={0.1}>
-            <h2 className="text-4xl md:text-5xl font-black text-primary mb-6">
+          <Reveal direction="up" delay={0.1} width="100%">
+            <h2 className="text-4xl md:text-5xl font-black text-primary mb-6 text-center">
               O Diferencial do Instituto Matriz
             </h2>
           </Reveal>
-          <Reveal direction="up" delay={0.2}>
-            <p className="text-xl text-foreground/70 max-w-3xl mx-auto font-medium">
+          <Reveal direction="up" delay={0.2} width="100%">
+            <p className="text-xl text-foreground/70 max-w-3xl mx-auto font-medium text-center">
               Neurociência, excelência científica e cuidado humano em cada atendimento, para crianças e adultos.
             </p>
           </Reveal>
