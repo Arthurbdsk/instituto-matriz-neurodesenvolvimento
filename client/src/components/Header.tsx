@@ -1,13 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { Menu, X, MessageCircle } from "lucide-react";
-import { useState, useEffect } from "react";
+import { MessageCircle } from "lucide-react";
+import { useEffect, useState } from "react";
 
 interface HeaderProps {
   onNavClick: (sectionId: string) => void;
 }
 
 export default function Header({ onNavClick }: HeaderProps) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -26,10 +25,7 @@ export default function Header({ onNavClick }: HeaderProps) {
     { label: "Contato", id: "contact" },
   ];
 
-  const handleNavClick = (id: string) => {
-    onNavClick(id);
-    setIsMenuOpen(false);
-  };
+
 
   return (
     <header 
@@ -43,7 +39,7 @@ export default function Header({ onNavClick }: HeaderProps) {
         {/* Logo */}
         <div 
           className="flex items-center gap-3 cursor-pointer group"
-          onClick={() => handleNavClick("home")}
+          onClick={() => onNavClick("home")}
         >
           <div className="relative transition-transform duration-500 group-hover:scale-110">
             <img
@@ -59,7 +55,7 @@ export default function Header({ onNavClick }: HeaderProps) {
           {navItems.map((item) => (
             <button
               key={item.id}
-              onClick={() => handleNavClick(item.id)}
+              onClick={() => onNavClick(item.id)}
               className="px-5 py-3 text-lg font-bold text-foreground/80 hover:text-primary transition-all rounded-full hover:bg-primary/5"
             >
               {item.label}
@@ -68,7 +64,14 @@ export default function Header({ onNavClick }: HeaderProps) {
         </nav>
 
         {/* CTA Buttons */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
+          <button
+            onClick={() => window.open('https://wa.me/5511984640809', '_blank')}
+            className="md:hidden bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg shadow-green-100 transition-all hover:scale-110 active:scale-95"
+            aria-label="Abrir WhatsApp"
+          >
+            <MessageCircle size={20} />
+          </button>
           <Button
             onClick={() => window.open('https://wa.me/5511984640809', '_blank')}
             className="hidden md:flex bg-green-500 hover:bg-green-600 text-white gap-3 px-8 py-8 rounded-full text-lg font-black shadow-xl shadow-green-100 transition-all hover:-translate-y-1 active:translate-y-0"
@@ -76,43 +79,10 @@ export default function Header({ onNavClick }: HeaderProps) {
             <MessageCircle size={24} />
             Dê o primeiro passo. Fale no WhatsApp
           </Button>
-          
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden p-4 bg-white hover:bg-primary/5 rounded-full transition-all border border-primary/10 shadow-md"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Menu"
-          >
-            {isMenuOpen ? <X size={32} className="text-primary" /> : <Menu size={32} className="text-primary" />}
-          </button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <nav className="lg:hidden absolute top-full left-4 right-4 mt-4 border border-primary/10 bg-white/95 backdrop-blur-2xl shadow-2xl rounded-[32px] overflow-hidden animate-in fade-in zoom-in duration-300">
-          <div className="p-8 flex flex-col gap-3">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => handleNavClick(item.id)}
-                className="px-6 py-5 text-left text-xl font-black text-foreground hover:text-primary hover:bg-primary/5 rounded-2xl transition-all"
-              >
-                {item.label}
-              </button>
-            ))}
-            <div className="grid grid-cols-1 gap-4 mt-6">
-              <Button
-                onClick={() => window.open('https://wa.me/5511984640809', '_blank')}
-                className="w-full bg-green-500 hover:bg-green-600 text-white py-8 rounded-2xl gap-2 text-xl font-black shadow-2xl shadow-green-100"
-              >
-                <MessageCircle size={24} />
-                Fale no WhatsApp
-              </Button>
-            </div>
-          </div>
-        </nav>
-      )}
+
     </header>
   );
 }
