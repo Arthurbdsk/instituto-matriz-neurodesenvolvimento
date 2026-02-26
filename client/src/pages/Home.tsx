@@ -25,7 +25,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-white overflow-x-hidden">
       <Header onNavClick={handleNavClick} />
       <main className="flex-1">
         <HeroSection onCtaClick={handleCtaClick} />
