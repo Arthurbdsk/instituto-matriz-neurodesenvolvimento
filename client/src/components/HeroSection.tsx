@@ -28,7 +28,7 @@ export default function HeroSection({ onCtaClick }: HeroSectionProps) {
 
             <Reveal direction="left" delay={0.3}>
               <p className="text-sm sm:text-base md:text-lg text-foreground leading-relaxed max-w-lg">
-                Há mais de 20 anos atuando nas áreas de saúde, educação e neurodesenvolvimento humano, o Instituto Matriz oferece acompanhamento interdisciplinar especializado em Transtornos do Neurodesenvolvimento, <strong>como: TEA, TDAH, TOD, Síndrome de Down, entre outras.</strong>
+                Há mais de 20 anos atuando nas áreas de saúde, educação e neurodesenvolvimento humano, o Instituto Matriz oferece acompanhamento interdisciplinar especializado em Transtornos do Neurodesenvolvimento, como: <strong>TEA, TDAH, TOD, Síndrome de Down, entre outras.</strong>
                 <br /><br />
                 Já acompanhamos mais de 1.000 famílias com uma abordagem baseada em evidências científicas, aliando rigor técnico, escuta qualificada e planejamento individualizado.
               </p>
