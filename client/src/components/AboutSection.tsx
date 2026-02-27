@@ -41,18 +41,18 @@ export default function AboutSection() {
       <div className="container">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <Reveal direction="up" delay={0.1}>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-6">
+          <Reveal direction="up" delay={0.1} width="100%">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-6 text-center">
               Quem Somos
             </h2>
           </Reveal>
-          <Reveal direction="up" delay={0.2}>
-            <p className="text-sm sm:text-base md:text-lg text-foreground leading-relaxed mb-4">
+          <Reveal direction="up" delay={0.2} width="100%">
+            <p className="text-sm sm:text-base md:text-lg text-foreground leading-relaxed mb-4 text-center">
               O Instituto Matriz de Neurodesenvolvimento é um centro especializado em saúde, educação e desenvolvimento humano, com atuação interdisciplinar e baseada em evidências científicas.
             </p>
           </Reveal>
-          <Reveal direction="up" delay={0.3}>
-            <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed">
+          <Reveal direction="up" delay={0.3} width="100%">
+            <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed text-center">
               Com mais de <strong>20 anos de experiência</strong>, o Instituto Matriz é a consolidação de uma prática madura, ética e responsável, tendo acompanhado mais de <strong>1.000 famílias</strong>, inclusive em projetos internacionais.
             </p>
           </Reveal>
