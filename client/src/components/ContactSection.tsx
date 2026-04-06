@@ -153,14 +153,14 @@ export default function ContactSection() {
               </Reveal>
 
               <Reveal direction="left" delay={0.2} width="100%">
-                <Card className="p-4 sm:p-6 md:p-8 border-border hover:shadow-lg transition-shadow">
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 bg-primary/10 rounded-lg">
-                      <Mail className="text-primary" size={24} />
+                <Card className="p-3 sm:p-6 md:p-8 border-border hover:shadow-lg transition-shadow">
+                  <div className="flex items-start gap-2 sm:gap-4">
+                    <div className="p-2 sm:p-3 bg-primary/10 rounded-lg flex-shrink-0">
+                      <Mail className="text-primary" size={20} />
                     </div>
-                    <div>
-                      <h3 className="font-bold text-primary mb-2">E-mail</h3>
-                      <p className="text-foreground text-sm break-words">contato@institutomatriz.com.br</p>
+                    <div className="min-w-0">
+                      <h3 className="font-bold text-primary mb-1 sm:mb-2 text-sm sm:text-base">E-mail</h3>
+                      <p className="text-foreground text-[10px] xs:text-xs sm:text-sm whitespace-nowrap">contato@institutomatriz.com.br</p>
                       <p className="text-sm text-muted-foreground">
                         Responderemos em até 24 horas
                       </p>
