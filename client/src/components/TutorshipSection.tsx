@@ -3,28 +3,28 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "./Reveal";
 
-const subjects = [
+const disciplines = [
   {
-    category: "Ensino Fundamental",
-    items: ["Português", "Matemática", "Ciências", "História", "Geografia", "Inglês"],
+    title: "Ensino Fundamental",
+    description: "Reforço escolar especializado com abordagem personalizada.",
     color: "bg-blue-600",
     lightColor: "bg-blue-50",
   },
   {
-    category: "Ensino Médio",
-    items: ["Português", "Matemática", "Física", "Química", "Biologia", "História", "Geografia", "Inglês", "Filosofia"],
+    title: "Ensino Médio",
+    description: "Preparação acadêmica com foco em desempenho e aprendizagem.",
     color: "bg-green-600",
     lightColor: "bg-green-50",
   },
   {
-    category: "Preparação para Vestibular",
-    items: ["ENEM", "Vestibulares", "Reforço Intensivo", "Revisão de Conteúdos"],
+    title: "Preparação para Vestibular",
+    description: "Reforço intensivo e revisão de conteúdos para ENEM e vestibulares.",
     color: "bg-teal-600",
     lightColor: "bg-teal-50",
   },
   {
-    category: "Ensino Superior",
-    items: ["Disciplinas Acadêmicas", "Reforço Universitário", "Preparação para Provas"],
+    title: "Ensino Superior",
+    description: "Suporte acadêmico para disciplinas universitárias.",
     color: "bg-cyan-600",
     lightColor: "bg-cyan-50",
   },
@@ -95,39 +95,32 @@ export default function TutorshipSection() {
           })}
         </div>
 
-        {/* Subjects Grid */}
+        {/* Disciplines Grid */}
         <Reveal direction="up" delay={0.3} width="100%">
           <div className="bg-white rounded-[32px] md:rounded-[48px] p-8 md:p-16 lg:p-24 border-2 border-primary/5 shadow-inner mb-24">
             <div className="flex items-center gap-3 md:gap-4 mb-12 md:mb-16 justify-center flex-col sm:flex-row">
               <BookOpen className="text-primary" size={32} />
               <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-black text-primary text-center tracking-tighter">
-                Matérias Oferecidas
+                Todas as Disciplinas
               </h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12">
-              {subjects.map((subject, index) => (
-                <div
-                  key={index}
-                  className={`hover:translate-x-2 transition-transform duration-300 ${subject.lightColor} p-8 md:p-10 lg:p-12 rounded-[24px] md:rounded-[32px] shadow-lg hover:shadow-2xl border-2 border-transparent hover:border-white`}
-                >
-                  <h4 className={`text-lg md:text-xl lg:text-2xl font-black text-${subject.color.replace('bg-', '')} mb-6 md:mb-8 flex items-center gap-3 md:gap-4`}>
-                    <div className={`w-12 md:w-14 lg:w-16 h-12 md:h-14 lg:h-16 rounded-lg md:rounded-xl ${subject.color} text-white flex items-center justify-center shadow-lg flex-shrink-0`}>
-                      <CheckCircle2 size={24} />
-                    </div>
-                    {subject.category}
-                  </h4>
-                  <ul className="space-y-3 md:space-y-4">
-                    {subject.items.map((item, itemIndex) => (
-                      <li
-                        key={itemIndex}
-                        className="text-sm md:text-base lg:text-lg font-bold text-foreground/70 flex items-center gap-3"
-                      >
-                        <div className={`w-2 h-2 rounded-full ${subject.color} opacity-40 flex-shrink-0`}></div>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              {disciplines.map((discipline, index) => (
+                <Reveal key={index} direction={index % 2 === 0 ? "left" : "right"} delay={0.1 * (index + 1)} width="100%">
+                  <div
+                    className={`hover:translate-x-2 transition-transform duration-300 ${discipline.lightColor} p-8 md:p-10 lg:p-12 rounded-[24px] md:rounded-[32px] shadow-lg hover:shadow-2xl border-2 border-transparent hover:border-white hover:scale-[1.02] hover:-translate-y-2 group`}
+                  >
+                    <h4 className={`text-lg md:text-xl lg:text-2xl font-black text-${discipline.color.replace('bg-', '')} mb-6 md:mb-8 flex items-center gap-3 md:gap-4`}>
+                      <div className={`w-12 md:w-14 lg:w-16 h-12 md:h-14 lg:h-16 rounded-lg md:rounded-xl ${discipline.color} text-white flex items-center justify-center shadow-lg flex-shrink-0 group-hover:scale-110 transition-transform duration-500`}>
+                        <CheckCircle2 size={24} />
+                      </div>
+                      {discipline.title}
+                    </h4>
+                    <p className="text-sm md:text-base lg:text-lg font-bold text-foreground/70">
+                      {discipline.description}
+                    </p>
+                  </div>
+                </Reveal>
               ))}
             </div>
           </div>
