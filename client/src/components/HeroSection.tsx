@@ -8,7 +8,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onCtaClick }: HeroSectionProps) {
   return (
-    <section id="home" className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-green-50 py-20 md:py-32">
+    <section id="home" className="relative overflow-hidden bg-gradient-to-br from-blue-100 via-teal-50 to-green-100 py-20 md:py-32">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
           {/* Left Content */}

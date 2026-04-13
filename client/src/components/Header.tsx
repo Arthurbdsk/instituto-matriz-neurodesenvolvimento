@@ -22,6 +22,7 @@ export default function Header({ onNavClick }: HeaderProps) {
     { label: "Quem Somos", id: "about" },
     { label: "Áreas de Atuação", id: "services" },
     { label: "Público Atendido", id: "audience" },
+    { label: "Aulas Particulares", id: "tutorship" },
     { label: "Contato", id: "contact" },
   ];
 
@@ -31,8 +32,8 @@ export default function Header({ onNavClick }: HeaderProps) {
     <header 
       className={`sticky top-0 z-50 transition-all duration-500 ${
         isScrolled 
-          ? "bg-white/95 backdrop-blur-md border-b border-primary/10 shadow-lg py-3" 
-          : "bg-white border-b border-transparent py-6"
+          ? "bg-gradient-to-r from-blue-100 via-teal-100 to-green-100 backdrop-blur-md border-b border-primary/10 shadow-lg py-3" 
+          : "bg-gradient-to-r from-blue-50 via-teal-50 to-green-50 border-b border-transparent py-6"
       }`}
     >
       <div className="container flex items-center justify-between">

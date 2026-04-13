@@ -32,7 +32,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-32 bg-gradient-to-br from-blue-50 via-teal-50 to-blue-100 relative overflow-hidden">
+    <section id="contact" className="py-20 md:py-32 bg-gradient-to-br from-green-100 via-teal-100 to-blue-100 relative overflow-hidden">
       {/* Decorative Elements - More prominent */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-3xl -mr-64 -mt-64 animate-pulse"></div>
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-secondary/20 to-primary/20 rounded-full blur-3xl -ml-64 -mb-64 animate-pulse" style={{animationDelay: '1s'}}></div>

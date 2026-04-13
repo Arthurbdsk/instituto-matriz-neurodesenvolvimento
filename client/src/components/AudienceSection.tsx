@@ -100,7 +100,7 @@ export default function AudienceSection() {
   }, []);
 
   return (
-    <section id="audience" className="py-24 md:py-40 bg-white">
+    <section id="audience" className="py-24 md:py-40 bg-gradient-to-br from-teal-50 via-blue-100 to-cyan-100">
       <div className="container">
         {/* Header */}
         <div className="max-w-4xl mx-auto text-center mb-16 sm:mb-24">
