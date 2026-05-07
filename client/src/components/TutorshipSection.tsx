@@ -23,8 +23,8 @@ const disciplines = [
     lightColor: "bg-teal-50",
   },
   {
-    title: "Ensino Superior",
-    description: "Suporte acadêmico para disciplinas universitárias.",
+    title: "Alfabetização e Letramento",
+    description: "Desenvolvimento de competências fundamentais de leitura e escrita.",
     color: "bg-cyan-600",
     lightColor: "bg-cyan-50",
   },
