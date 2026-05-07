@@ -93,7 +93,7 @@ export default function SocialProofSection() {
               Nossos Aprovados
             </h2>
             <p className="text-lg md:text-xl text-gray-600 font-medium max-w-2xl mx-auto">
-              Conheça alguns dos nossos alunos que conquistaram aprovação em universidades de excelência no Brasil e no exterior
+              Conheça alguns dos nossos alunos que conquistaram aprovação em universidades de excelência no Brasil e no exterior.
             </p>
           </div>
         </Reveal>
