@@ -6,6 +6,7 @@ import ServicesSection from "@/components/ServicesSection";
 import AudienceSection from "@/components/AudienceSection";
 import FounderSection from "@/components/FounderSection";
 import TutorshipSection from "@/components/TutorshipSection";
+import SocialProofSection from "@/components/SocialProofSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
@@ -35,6 +36,7 @@ export default function Home() {
         <ServicesSection />
         <AudienceSection />
         <TutorshipSection />
+        <SocialProofSection />
         <ContactSection />
       </main>
       <Footer />

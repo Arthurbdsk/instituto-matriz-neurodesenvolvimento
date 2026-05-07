@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 interface HeaderProps {
@@ -8,6 +8,7 @@ interface HeaderProps {
 
 export default function Header({ onNavClick }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,7 +65,7 @@ export default function Header({ onNavClick }: HeaderProps) {
           ))}
         </nav>
 
-        {/* CTA Buttons */}
+        {/* CTA Buttons & Mobile Menu Toggle */}
         <div className="flex items-center gap-2 sm:gap-4">
           <button
             onClick={() => window.open('https://wa.me/5511984640809', '_blank')}
@@ -73,6 +74,7 @@ export default function Header({ onNavClick }: HeaderProps) {
           >
             <MessageCircle size={20} />
           </button>
+          
           <Button
             onClick={() => window.open('https://wa.me/5511984640809', '_blank')}
             className="hidden md:flex bg-green-500 hover:bg-green-600 text-white gap-3 px-8 py-8 rounded-full text-lg font-black shadow-xl shadow-green-100 transition-all hover:-translate-y-1 active:translate-y-0"
@@ -80,8 +82,35 @@ export default function Header({ onNavClick }: HeaderProps) {
             <MessageCircle size={24} />
             Dê o primeiro passo. Fale no WhatsApp
           </Button>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="lg:hidden p-3 text-foreground/80 hover:text-primary transition-all rounded-full hover:bg-primary/5"
+            aria-label="Menu"
+          >
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Navigation Menu */}
+      {isMenuOpen && (
+        <div className="lg:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-md border-b border-primary/10 shadow-xl py-6 px-4 flex flex-col gap-2 animate-in fade-in slide-in-from-top-5 duration-300">
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => {
+                onNavClick(item.id);
+                setIsMenuOpen(false);
+              }}
+              className="w-full text-left px-6 py-4 text-xl font-bold text-foreground/80 hover:text-primary hover:bg-primary/5 rounded-2xl transition-all"
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+      )}
 
 
     </header>
